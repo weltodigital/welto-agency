@@ -4,7 +4,7 @@ A high-converting SEO agency website specifically designed to attract local trad
 
 ## 🎯 Key Features
 
-- **Local SEO Optimized**: Built with local search optimization in mind
+- **Local SEO Optimized**: Built with local search optimisation in mind
 - **Trade-Focused Content**: Specifically targets electricians, plumbers, and tree surgeons
 - **Mobile-First Design**: Fully responsive for all devices
 - **High Converting**: Optimized for lead generation and customer acquisition
@@ -54,11 +54,11 @@ The main brand colors are defined in CSS variables in `styles.css`:
 
 ### SEO Optimization
 
-The site includes several SEO optimizations:
+The site includes several SEO optimisations:
 
 - **Meta Tags**: Title, description, keywords
 - **Schema Markup**: Organization and service markup
-- **Open Graph**: Social media sharing optimization
+- **Open Graph**: Social media sharing optimisation
 - **Local Keywords**: Targeted at trade services
 - **Internal Linking**: Proper navigation structure
 
@@ -98,7 +98,7 @@ The website is fully responsive with breakpoints at:
 - Proper heading hierarchy
 - Meta descriptions
 - Schema.org markup
-- Local business optimization
+- Local business optimisation
 - Fast loading times
 
 ## 📊 Analytics Setup
@@ -143,7 +143,7 @@ fetch('/contact', {
 
 ## 🎯 Target Keywords
 
-The site is optimized for these primary keywords:
+The site is optimised for these primary keywords:
 - Local SEO for electricians
 - Plumber SEO services
 - Tree surgeon marketing
@@ -176,7 +176,7 @@ The site is optimized for these primary keywords:
 1. **Content Refresh**: Update case studies and statistics quarterly
 2. **Keyword Optimization**: Review and update keywords based on performance
 3. **Technical SEO**: Regular SEO audits and improvements
-4. **Performance**: Monitor page speed and optimize as needed
+4. **Performance**: Monitor page speed and optimise as needed
 
 ## 📞 Support
 
