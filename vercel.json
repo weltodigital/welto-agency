@@ -1,0 +1,11 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server --port=3000",
-    "build": "echo 'Build process here'",
+    "build": "cp -r . dist/ && echo 'Static files copied to dist/'",
     "lint": "echo 'Linting process here'"
   },
   "keywords": [
