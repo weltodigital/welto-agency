@@ -1,0 +1,21 @@
+{
+  "name": "welto-agency",
+  "version": "1.0.0",
+  "description": "WELTO SEO Agency Website - Optimized for Local SEO Client Acquisition",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'Build process here'",
+    "lint": "echo 'Linting process here'"
+  },
+  "keywords": [
+    "seo",
+    "local-seo",
+    "digital-marketing",
+    "electricians",
+    "plumbers",
+    "tree-surgeons"
+  ],
+  "author": "WELTO Digital",
+  "license": "MIT"
+}
