@@ -17,5 +17,8 @@
     "tree-surgeons"
   ],
   "author": "WELTO Digital",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }
