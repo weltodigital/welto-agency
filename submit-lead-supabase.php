@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 try {
     // Validate required fields
-    $required_fields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location', 'current_marketing'];
+    $required_fields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location'];
     $missing_fields = [];
 
     foreach ($required_fields as $field) {
@@ -69,7 +69,6 @@ try {
         'business_name' => trim($_POST['business_name']),
         'trade_type' => trim($_POST['trade_type']),
         'location' => trim($_POST['location']),
-        'current_marketing' => trim($_POST['current_marketing']),
         'message' => trim($_POST['message'] ?? ''),
         'source' => 'seo-leads-1',
         'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',

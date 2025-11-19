@@ -767,18 +767,6 @@
                             </div>
 
                             <div>
-                                <label for="current_marketing" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Current Marketing Spend (Monthly)*</label>
-                                <select id="current_marketing" name="current_marketing" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px; background: white;">
-                                    <option value="">Select range...</option>
-                                    <option value="0-250">£0 - £250</option>
-                                    <option value="250-500">£250 - £500</option>
-                                    <option value="500-1000">£500 - £1,000</option>
-                                    <option value="1000-2000">£1,000 - £2,000</option>
-                                    <option value="2000+">£2,000+</option>
-                                </select>
-                            </div>
-
-                            <div>
                                 <label for="message" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">What's your biggest challenge getting customers? (Optional)</label>
                                 <textarea id="message" name="message" rows="4" placeholder="Tell us about your current situation..." style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
                             </div>
@@ -807,6 +795,17 @@
                         <a href="https://calendly.com/ed-weltodigital/30min" target="_blank" class="btn-secondary" style="font-size: 16px; padding: 12px 25px;">
                             📅 View Available Times
                         </a>
+                    </div>
+                </div>
+
+                <!-- Calendly Booking Widget -->
+                <div class="calendar-container" style="margin-top: 50px;">
+                    <div style="background: white; padding: 40px; border-radius: var(--border-radius); box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 30px;">Or Book Your Call Directly</h3>
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/ed-weltodigital/30min" style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
                     </div>
                 </div>
             </div>

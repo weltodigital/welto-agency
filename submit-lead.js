@@ -16,7 +16,7 @@ export async function submitLead(formData) {
         }
 
         // Validate required fields
-        const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location', 'current_marketing'];
+        const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location'];
         const missingFields = requiredFields.filter(field => !data[field] || data[field].trim() === '');
 
         if (missingFields.length > 0) {
@@ -44,7 +44,6 @@ export async function submitLead(formData) {
             business_name: data.business_name.trim(),
             trade_type: data.trade_type.trim(),
             location: data.location.trim(),
-            current_marketing: data.current_marketing.trim(),
             message: (data.message || '').trim(),
             source: 'seo-leads-1',
             ip_address: '', // Will be filled by server if needed
