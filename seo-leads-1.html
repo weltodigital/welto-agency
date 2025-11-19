@@ -715,11 +715,99 @@
                     </div>
                 </div>
 
-                <div class="calendar-container">
-                    <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/ed-weltodigital/30min" style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                    <!-- Calendly inline widget end -->
+                <div class="contact-form-container">
+                    <div style="background: white; padding: 40px; border-radius: var(--border-radius); box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 30px;">Get Your Free Strategy Call</h3>
+
+                        <form id="contact-form" action="submit-lead-supabase.php" method="POST" style="display: grid; gap: 20px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <label for="first_name" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">First Name*</label>
+                                    <input type="text" id="first_name" name="first_name" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                                </div>
+                                <div>
+                                    <label for="last_name" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Last Name*</label>
+                                    <input type="text" id="last_name" name="last_name" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Email Address*</label>
+                                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                            </div>
+
+                            <div>
+                                <label for="phone" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Phone Number*</label>
+                                <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                            </div>
+
+                            <div>
+                                <label for="business_name" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Business Name*</label>
+                                <input type="text" id="business_name" name="business_name" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                            </div>
+
+                            <div>
+                                <label for="trade_type" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Trade Type*</label>
+                                <select id="trade_type" name="trade_type" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px; background: white;">
+                                    <option value="">Select your trade...</option>
+                                    <option value="electrician">Electrician</option>
+                                    <option value="plumber">Plumber</option>
+                                    <option value="tree_surgeon">Tree Surgeon</option>
+                                    <option value="roofer">Roofer</option>
+                                    <option value="builder">Builder</option>
+                                    <option value="carpenter">Carpenter</option>
+                                    <option value="painter">Painter & Decorator</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="location" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Service Area*</label>
+                                <input type="text" id="location" name="location" required placeholder="e.g. London, Birmingham, Manchester" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px;">
+                            </div>
+
+                            <div>
+                                <label for="current_marketing" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">Current Marketing Spend (Monthly)*</label>
+                                <select id="current_marketing" name="current_marketing" required style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px; background: white;">
+                                    <option value="">Select range...</option>
+                                    <option value="0-250">£0 - £250</option>
+                                    <option value="250-500">£250 - £500</option>
+                                    <option value="500-1000">£500 - £1,000</option>
+                                    <option value="1000-2000">£1,000 - £2,000</option>
+                                    <option value="2000+">£2,000+</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-dark);">What's your biggest challenge getting customers? (Optional)</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your current situation..." style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn-primary" style="font-size: 18px; padding: 15px 40px; cursor: pointer; border: none; background: var(--primary-blue); color: white; border-radius: 8px;">
+                                    📞 Book My FREE Strategy Call
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="form-success" style="display: none; background: #e8f5e8; color: #00b894; padding: 20px; border-radius: 8px; text-align: center; margin-top: 20px;">
+                            <h4 style="margin: 0 0 10px 0;">✅ Thank You!</h4>
+                            <p style="margin: 0;">We've received your details and will contact you within 24 hours to schedule your free strategy call.</p>
+                        </div>
+
+                        <div id="form-error" style="display: none; background: #ffe6e6; color: #d63031; padding: 20px; border-radius: 8px; text-align: center; margin-top: 20px;">
+                            <h4 style="margin: 0 0 10px 0;">❌ Oops!</h4>
+                            <p style="margin: 0;">There was an issue submitting your form. Please try again or email us directly at info@weltodigital.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Alternative: Calendly Option -->
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p style="color: var(--text-light); margin-bottom: 15px;">Prefer to book directly?</p>
+                        <a href="https://calendly.com/ed-weltodigital/30min" target="_blank" class="btn-secondary" style="font-size: 16px; padding: 12px 25px;">
+                            📅 View Available Times
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -820,6 +908,53 @@
             if (e.target === this) {
                 closeExitIntent();
             }
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+
+            // Show loading state
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+
+            // Hide previous messages
+            document.getElementById('form-success').style.display = 'none';
+            document.getElementById('form-error').style.display = 'none';
+
+            fetch('submit-lead-supabase.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('form-success').style.display = 'block';
+                    this.reset(); // Clear form
+
+                    // Track conversion
+                    gtag('event', 'conversion', {
+                        'send_to': 'G-QNVPCG57KD/lead_form_submission',
+                        'value': 1.0,
+                        'currency': 'GBP'
+                    });
+                } else {
+                    document.getElementById('form-error').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('form-error').style.display = 'block';
+            })
+            .finally(() => {
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
         });
     </script>
 </body>

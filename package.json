@@ -18,6 +18,9 @@
   ],
   "author": "WELTO Digital",
   "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.5"
+  },
   "devDependencies": {
     "live-server": "^1.2.2"
   }
