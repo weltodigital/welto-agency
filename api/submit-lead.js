@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ddtyovjdxdfpqjemmtyp.supabase.co';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkdHlvdmpkeGRmcHFqZW1tdHlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1ODIzMjYsImV4cCI6MjA3OTE1ODMyNn0.uIGMXSqbUg-5HOVQUznYwBb1GAetPqpi0aJ5iVKj8Y0';
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -25,13 +25,29 @@ export default async function handler(req, res) {
     }
 
     try {
+        // Log for debugging
+        console.log('Request method:', req.method);
+        console.log('Request body:', req.body);
+        console.log('Supabase URL:', supabaseUrl);
+        console.log('Supabase Key exists:', !!supabaseKey);
+
         const data = req.body;
+
+        // Validate we have data
+        if (!data) {
+            console.error('No data received');
+            return res.status(400).json({
+                success: false,
+                message: 'No data received'
+            });
+        }
 
         // Validate required fields
         const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location'];
         const missingFields = requiredFields.filter(field => !data[field] || data[field].trim() === '');
 
         if (missingFields.length > 0) {
+            console.error('Missing fields:', missingFields);
             return res.status(400).json({
                 success: false,
                 message: `Missing required fields: ${missingFields.join(', ')}`
@@ -64,19 +80,28 @@ export default async function handler(req, res) {
         };
 
         // Insert data into Supabase
+        console.log('Attempting to insert lead data:', leadData);
         const { data: result, error } = await supabase
             .from('leads')
             .insert([leadData])
             .select();
 
         if (error) {
-            console.error('Supabase error:', error);
+            console.error('Supabase error details:', {
+                message: error.message,
+                details: error.details,
+                hint: error.hint,
+                code: error.code
+            });
             return res.status(500).json({
                 success: false,
                 message: 'Failed to submit lead. Please try again later.',
-                error: error.message
+                error: error.message,
+                details: error.details
             });
         }
+
+        console.log('Successfully inserted lead:', result);
 
         return res.status(200).json({
             success: true,
