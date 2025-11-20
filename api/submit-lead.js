@@ -1,0 +1,94 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export default async function handler(req, res) {
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Handle preflight request
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
+    // Only allow POST requests
+    if (req.method !== 'POST') {
+        return res.status(405).json({
+            success: false,
+            message: 'Method not allowed'
+        });
+    }
+
+    try {
+        const data = req.body;
+
+        // Validate required fields
+        const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'business_name', 'trade_type', 'location'];
+        const missingFields = requiredFields.filter(field => !data[field] || data[field].trim() === '');
+
+        if (missingFields.length > 0) {
+            return res.status(400).json({
+                success: false,
+                message: `Missing required fields: ${missingFields.join(', ')}`
+            });
+        }
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid email address'
+            });
+        }
+
+        // Prepare data for Supabase
+        const leadData = {
+            first_name: data.first_name.trim(),
+            last_name: data.last_name.trim(),
+            email: data.email.trim().toLowerCase(),
+            phone: data.phone.trim(),
+            business_name: data.business_name.trim(),
+            trade_type: data.trade_type.trim(),
+            location: data.location.trim(),
+            message: (data.message || '').trim(),
+            source: 'seo-leads-1',
+            ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress || '',
+            user_agent: req.headers['user-agent'] || '',
+            submitted_at: new Date().toISOString()
+        };
+
+        // Insert data into Supabase
+        const { data: result, error } = await supabase
+            .from('leads')
+            .insert([leadData])
+            .select();
+
+        if (error) {
+            console.error('Supabase error:', error);
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to submit lead. Please try again later.',
+                error: error.message
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: 'Lead submitted successfully',
+            lead_id: result[0]?.id
+        });
+
+    } catch (error) {
+        console.error('Submit lead error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'An error occurred. Please try again later.'
+        });
+    }
+}
