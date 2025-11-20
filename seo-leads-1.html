@@ -936,8 +936,12 @@
                 },
                 body: JSON.stringify(Object.fromEntries(formData))
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
             .then(data => {
+                console.log('Response data:', data);
                 if (data.success) {
                     document.getElementById('form-success').style.display = 'block';
                     this.reset(); // Clear form
@@ -949,6 +953,7 @@
                         'currency': 'GBP'
                     });
                 } else {
+                    console.error('API Error:', data.message, data.error, data.details);
                     document.getElementById('form-error').style.display = 'block';
                 }
             })
