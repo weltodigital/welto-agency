@@ -72,12 +72,31 @@ export default async function handler(req, res) {
             business_name: data.business_name.trim(),
             trade_type: data.trade_type.trim(),
             location: data.location.trim(),
+            current_marketing: data.current_marketing || 'Directory sites',
             message: (data.message || '').trim(),
             source: 'seo-leads-1',
             ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress || '',
             user_agent: req.headers['user-agent'] || '',
             submitted_at: new Date().toISOString()
         };
+
+        // Test Supabase connection first
+        console.log('Testing Supabase connection...');
+        const { data: testData, error: testError } = await supabase
+            .from('leads')
+            .select('*')
+            .limit(1);
+
+        if (testError) {
+            console.error('Supabase connection test failed:', testError);
+            return res.status(500).json({
+                success: false,
+                message: 'Database connection failed',
+                error: testError.message
+            });
+        }
+
+        console.log('Supabase connection successful');
 
         // Insert data into Supabase
         console.log('Attempting to insert lead data:', leadData);
