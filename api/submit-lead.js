@@ -80,23 +80,35 @@ export default async function handler(req, res) {
             submitted_at: new Date().toISOString()
         };
 
-        // Test Supabase connection first
-        console.log('Testing Supabase connection...');
-        const { data: testData, error: testError } = await supabase
-            .from('leads')
-            .select('*')
-            .limit(1);
+        // Simplified approach - try to create table first if it doesn't exist
+        const createTableIfNotExists = async () => {
+            try {
+                // Try to select from table to see if it exists
+                const { error: selectError } = await supabase
+                    .from('leads')
+                    .select('id')
+                    .limit(1);
 
-        if (testError) {
-            console.error('Supabase connection test failed:', testError);
+                if (selectError && selectError.message.includes('relation "public.leads" does not exist')) {
+                    console.log('Table does not exist, creating it...');
+                    // Table doesn't exist, we need to create it manually via Supabase dashboard
+                    return { needsTableCreation: true };
+                }
+                return { needsTableCreation: false };
+            } catch (error) {
+                console.error('Error checking table:', error);
+                return { needsTableCreation: true };
+            }
+        };
+
+        const tableCheck = await createTableIfNotExists();
+        if (tableCheck.needsTableCreation) {
             return res.status(500).json({
                 success: false,
-                message: 'Database connection failed',
-                error: testError.message
+                message: 'Database table "leads" does not exist. Please create the table in your Supabase dashboard first.',
+                hint: 'Go to Supabase Dashboard > SQL Editor and run the SQL from setup-database.sql'
             });
         }
-
-        console.log('Supabase connection successful');
 
         // Insert data into Supabase
         console.log('Attempting to insert lead data:', leadData);
