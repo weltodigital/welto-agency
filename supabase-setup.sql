@@ -33,14 +33,16 @@ ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
 -- Drop existing policies if they exist and recreate them
 DROP POLICY IF EXISTS "Allow anonymous inserts" ON public.leads;
 DROP POLICY IF EXISTS "Allow authenticated selects" ON public.leads;
+DROP POLICY IF EXISTS "Enable insert for anon users" ON public.leads;
+DROP POLICY IF EXISTS "Enable read access for authenticated users" ON public.leads;
 
--- Create policy to allow inserts (for the anon key)
-CREATE POLICY "Allow anonymous inserts" ON public.leads
-    FOR INSERT TO anon
+-- Create policy to allow ALL users to insert (including anon)
+CREATE POLICY "Enable insert for anon users" ON public.leads
+    FOR INSERT
     WITH CHECK (true);
 
--- Create policy to allow selects for authenticated users only
-CREATE POLICY "Allow authenticated selects" ON public.leads
+-- Create policy to allow authenticated users to read
+CREATE POLICY "Enable read access for authenticated users" ON public.leads
     FOR SELECT TO authenticated
     USING (true);
 
