@@ -4,102 +4,236 @@
   <!-- Main Pages -->
   <url>
     <loc>https://weltodigital.com/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
+    <loc>https://weltodigital.com/services/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://weltodigital.com/contact/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/about/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Industry Pages -->
+  <!-- Trade-Specific SEO Pages -->
   <url>
-    <loc>https://weltodigital.com/seo-plumber/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://weltodigital.com/seo-electrician/</loc>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Location Pages -->
+  <url>
+    <loc>https://weltodigital.com/seo-plumber/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-builder/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-tree-surgeon/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-roofer/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-gas-engineer/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-carpenter/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-carpet-cleaner/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-carpet-fitter/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/seo-garden-landscaper/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location-Specific SEO Pages - Cities -->
   <url>
     <loc>https://weltodigital.com/local-seo-london/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/local-seo-southampton/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/local-seo-portsmouth/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/local-seo-winchester/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/local-seo-chichester/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Pages -->
   <url>
-    <loc>https://weltodigital.com/blog/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://weltodigital.com/local-seo-fareham/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-havant/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-bournemouth/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-brighton/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-guildford/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-farnham/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location-Specific SEO Pages - Counties -->
+  <url>
+    <loc>https://weltodigital.com/local-seo-surrey/</loc>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://weltodigital.com/blog/what-is-local-seo/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://weltodigital.com/local-seo-hampshire/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://weltodigital.com/local-seo-sussex/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://weltodigital.com/blog/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal Pages -->
+  <url>
+    <loc>https://weltodigital.com/blog/what-is-local-seo/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal & Utility Pages -->
   <url>
     <loc>https://weltodigital.com/privacy/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/terms/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://weltodigital.com/sitemap/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
