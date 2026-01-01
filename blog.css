@@ -679,9 +679,9 @@
 }
 
 .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid var(--primary-yellow);
+    background: var(--primary-yellow);
+    color: var(--white);
+    border: none;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -692,9 +692,10 @@
 }
 
 .btn-secondary:hover {
-    background: var(--primary-yellow);
-    color: var(--primary-blue);
-    transform: translateY(-2px);
+    background: var(--dark-yellow);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: var(--box-shadow);
 }
 
 /* Contact Info Section */

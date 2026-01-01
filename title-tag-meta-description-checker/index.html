@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Title Tag & Meta Description Checker | SEO Tool | WELTO Digital</title>
+    <meta name="description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO. Get instant feedback for your website's meta tags.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Title Tag & Meta Description Checker | SEO Tool">
+    <meta property="og:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weltodigital.com/title-tag-meta-description-checker/">
+    <meta property="og:image" content="https://weltodigital.com/title-tag-meta-description-checker/title-checker-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Title Tag & Meta Description Checker">
+    <meta name="twitter:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO.">
+    <meta name="twitter:image" content="https://weltodigital.com/title-tag-meta-description-checker/title-checker-twitter.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Title Tag & Meta Description Checker",
+        "description": "Free SEO tool to analyze and optimize title tags and meta descriptions for better search engine results",
+        "url": "https://weltodigital.com/title-tag-meta-description-checker/",
+        "applicationCategory": "SEO Tools",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "WELTO Digital",
+            "url": "https://weltodigital.com"
+        },
+        "featureList": [
+            "Title tag length analysis",
+            "Meta description length analysis",
+            "Google SERP preview",
+            "SEO recommendations",
+            "Character count tracking",
+            "Real-time validation"
+        ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the ideal title tag length?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ideal title tag length is 50-60 characters. Google typically displays 50-60 characters of a title tag in search results, though this can vary based on character width."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the ideal meta description length?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ideal meta description length is 150-160 characters. Google typically shows up to 160 characters in search results, but may truncate longer descriptions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are title tags important for SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Title tags are crucial for SEO because they tell search engines and users what your page is about. They appear as the clickable headline in search results and directly impact click-through rates and rankings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do meta descriptions affect SEO rankings?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Meta descriptions don't directly affect rankings, but they significantly impact click-through rates from search results. A well-written meta description can improve CTR, which indirectly benefits SEO."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="../WELTO LOGO copy.png" alt="WELTO" class="logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="../#industries" class="nav-link">Industries</a></li>
+                    <li><a href="../#case-studies" class="nav-link">Case Studies</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../blog/" class="nav-link">Blog</a></li>
+                </ul>
+                <div class="nav-contact">
+                    <span class="nav-email">info@weltodigital.com</span>
+                    <a href="../contact/" class="nav-contact-btn">Contact</a>
+                </div>
+                <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header tool-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Free Title Tag & Meta Description Checker</h1>
+                <p>Analyze your title tags and meta descriptions to ensure they're optimized for search engines. Get instant feedback on length, preview how they appear in Google, and improve your click-through rates.</p>
+                <div class="tool-features">
+                    <span class="tool-feature">✓ Length Analysis</span>
+                    <span class="tool-feature">✓ SERP Preview</span>
+                    <span class="tool-feature">✓ SEO Recommendations</span>
+                    <span class="tool-feature">✓ Instant Results</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Title Checker Tool Section -->
+    <section class="keyword-tool-section">
+        <div class="container">
+            <div class="tool-container">
+                <div class="tool-inputs">
+                    <div class="input-group">
+                        <label for="urlInput">URL (Optional)</label>
+                        <input type="url" id="urlInput" class="tool-input" placeholder="https://yourwebsite.com/page">
+                        <button id="fetchBtn" class="btn-secondary fetch-btn">Fetch Meta Tags</button>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="titleInput">
+                            Title Tag
+                            <span class="character-count" id="titleCount">0/60</span>
+                        </label>
+                        <input type="text" id="titleInput" class="tool-input" placeholder="Enter your page title" maxlength="100">
+                        <div class="input-feedback" id="titleFeedback"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="descriptionInput">
+                            Meta Description
+                            <span class="character-count" id="descriptionCount">0/160</span>
+                        </label>
+                        <textarea id="descriptionInput" class="tool-input" placeholder="Enter your meta description" rows="3" maxlength="300"></textarea>
+                        <div class="input-feedback" id="descriptionFeedback"></div>
+                    </div>
+
+                    <button id="analyzeBtn" class="btn-primary tool-generate-btn">Analyze Meta Tags</button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="tool-results" id="toolResults" style="display: none;">
+                    <h3>Search Result Preview</h3>
+
+                    <div class="serp-preview" id="serpPreview">
+                        <div class="serp-url" id="serpUrl">https://yourwebsite.com</div>
+                        <div class="serp-title" id="serpTitle">Your Page Title</div>
+                        <div class="serp-description" id="serpDescription">Your meta description appears here...</div>
+                    </div>
+
+                    <div class="analysis-grid">
+                        <div class="analysis-card" id="titleAnalysis">
+                            <h4>Title Tag Analysis</h4>
+                            <div class="analysis-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Length:</span>
+                                    <span class="metric-value" id="titleLength">0 characters</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Status:</span>
+                                    <span class="metric-status" id="titleStatus">-</span>
+                                </div>
+                            </div>
+                            <div class="analysis-recommendations" id="titleRecommendations"></div>
+                        </div>
+
+                        <div class="analysis-card" id="descriptionAnalysis">
+                            <h4>Meta Description Analysis</h4>
+                            <div class="analysis-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Length:</span>
+                                    <span class="metric-value" id="descriptionLength">0 characters</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Status:</span>
+                                    <span class="metric-status" id="descriptionStatus">-</span>
+                                </div>
+                            </div>
+                            <div class="analysis-recommendations" id="descriptionRecommendations"></div>
+                        </div>
+                    </div>
+
+                    <div class="overall-score" id="overallScore">
+                        <h4>Overall SEO Score</h4>
+                        <div class="score-display" id="scoreDisplay">
+                            <span class="score-number" id="scoreNumber">-</span>
+                            <span class="score-label">/ 100</span>
+                        </div>
+                        <div class="score-feedback" id="scoreFeedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="tool-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2>Why Use Our Title Tag & Meta Description Checker?</h2>
+                    <p>Professional SEO tool designed to help you optimize your meta tags for better search engine performance and higher click-through rates.</p>
+
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div>
+                                <h4>SERP Preview</h4>
+                                <p>See exactly how your title and description will appear in Google search results before publishing, ensuring optimal formatting and messaging.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div>
+                                <h4>Length Optimization</h4>
+                                <p>Get real-time character counts and warnings when your title tags or descriptions are too long or too short for optimal search display.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div>
+                                <h4>SEO Best Practices</h4>
+                                <p>Receive actionable recommendations based on current SEO guidelines to help your pages rank higher and perform better in search results.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div>
+                                <h4>Click-Through Optimization</h4>
+                                <p>Optimized title tags and meta descriptions directly impact how often users click on your search results, increasing organic traffic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Analysis</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50-60</span>
+                        <span class="stat-label">Optimal Title Length</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">150-160</span>
+                        <span class="stat-label">Optimal Description Length</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is the ideal title tag length?</h3>
+                    <p>The ideal title tag length is 50-60 characters. Google typically displays 50-60 characters of a title tag in search results, though this can vary based on character width. Titles longer than 60 characters may be truncated with an ellipsis (...), potentially cutting off important information.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the ideal meta description length?</h3>
+                    <p>The ideal meta description length is 150-160 characters. Google typically shows up to 160 characters in search results, but may truncate longer descriptions. Shorter descriptions (under 120 characters) may not provide enough information to entice users to click.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Why are title tags important for SEO?</h3>
+                    <p>Title tags are crucial for SEO because they tell search engines and users what your page is about. They appear as the clickable headline in search results and are one of the most important on-page SEO factors. Well-optimized title tags can improve both rankings and click-through rates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do meta descriptions affect SEO rankings?</h3>
+                    <p>Meta descriptions don't directly affect SEO rankings as a ranking factor. However, they significantly impact click-through rates (CTR) from search results. A well-written meta description can improve CTR, which is a user experience signal that can indirectly benefit your SEO performance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I use the same title tag and meta description on multiple pages?</h3>
+                    <p>No, each page should have unique title tags and meta descriptions. Duplicate meta tags can confuse search engines about which page to rank for specific queries and may lead to lower rankings. Each page's meta tags should reflect its unique content and purpose.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How often should I update my title tags and meta descriptions?</h3>
+                    <p>Review and update your title tags and meta descriptions when you update page content, change your target keywords, or notice declining click-through rates. Generally, reviewing them quarterly or when making significant content changes is a good practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Help with SEO Optimization?</h2>
+                <p>While tools are helpful, sometimes you need expert guidance. Our SEO specialists can help optimize your entire website for better search engine performance.</p>
+
+                <div class="cta-buttons">
+                    <a href="../contact/" class="btn-primary">Get SEO Help</a>
+                    <a href="../services/" class="btn-secondary">View Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../WELTO LOGO copy.png" alt="WELTO Local SEO Agency" class="footer-logo">
+                    <p>Leading local SEO agency specialising in search marketing for trades and local businesses. We help electricians, plumbers, builders, tree surgeons, roofers, gas engineers, carpenters, and all tradespeople dominate their local markets across the UK.</p>
+                </div>
+
+                                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Industries</h4>
+                        <ul>
+                            <li><a href="../seo-electrician/">SEO for Electricians</a></li>
+                            <li><a href="../seo-plumber/">SEO for Plumbers</a></li>
+                            <li><a href="../seo-builder/">SEO for Builders</a></li>
+                            <li><a href="../seo-tree-surgeon/">SEO for Tree Surgeons</a></li>
+                            <li><a href="../seo-roofer/">SEO for Roofers</a></li>
+                            <li><a href="../seo-gas-engineer/">SEO for Gas Engineers</a></li>
+                            <li><a href="../seo-carpenter/">SEO for Carpenters</a></li>
+                            <li><a href="../seo-carpet-cleaner/">SEO for Carpet Cleaners</a></li>
+                            <li><a href="../seo-carpet-fitter/">SEO for Carpet Fitters</a></li>
+                            <li><a href="../seo-garden-landscaper/">SEO for Garden Landscapers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Cities</h4>
+                        <ul>
+                            <li><a href="../local-seo-london/">Local SEO London</a></li>
+                            <li><a href="../local-seo-southampton/">Local SEO Southampton</a></li>
+                            <li><a href="../local-seo-portsmouth/">Local SEO Portsmouth</a></li>
+                            <li><a href="../local-seo-winchester/">Local SEO Winchester</a></li>
+                            <li><a href="../local-seo-chichester/">Local SEO Chichester</a></li>
+                            <li><a href="../local-seo-fareham/">Local SEO Fareham</a></li>
+                            <li><a href="../local-seo-havant/">Local SEO Havant</a></li>
+                            <li><a href="../local-seo-bournemouth/">Local SEO Bournemouth</a></li>
+                            <li><a href="../local-seo-brighton/">Local SEO Brighton</a></li>
+                            <li><a href="../local-seo-guildford/">Local SEO Guildford</a></li>
+                            <li><a href="../local-seo-farnham/">Local SEO Farnham</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Counties</h4>
+                        <ul>
+                            <li><a href="../local-seo-surrey/">Local SEO Surrey</a></li>
+                            <li><a href="../local-seo-hampshire/">Local SEO Hampshire</a></li>
+                            <li><a href="../local-seo-sussex/">Local SEO Sussex</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="../local-keyword-ideas-tool/">Keyword Research Tool</a></li>
+                            <li><a href="../title-tag-meta-description-checker/">Title Tag Checker</a></li>
+                            <li><a href="../local-business-schema-generator/">Schema Generator</a></li>
+                            <li><a href="../google-business-profile-audit-tool/">GBP Audit Tool</a></li>
+                            <li><a href="../google-business-image-size-guide/">Image Size Guide</a></li>
+                            <li><a href="../blog/">SEO Blog</a></li>
+                            <li><a href="../contact/">Free Consultation</a></li>
+                            <li><a href="../about/">About WELTO</a></li>
+                            <li><a href="../privacy/">Privacy Policy</a></li>
+                            <li><a href="../terms/">Terms of Service</a></li>
+                            <li><a href="../sitemap.xml">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 WELTO Limited | Registered in England & Wales. Company Number: 14630258</p>
+                    <p>167-169 Great Portland Street, London, England, W1W 5PF</p>
+                    <p>Email: <a href="mailto:info@weltodigital.com">info@weltodigital.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="title-checker.js"></script>
+</body>
+</html>
