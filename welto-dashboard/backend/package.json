@@ -1,0 +1,47 @@
+{
+  "name": "welto-dashboard-backend",
+  "version": "1.0.0",
+  "description": "Backend API for WELTO client dashboard",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "init-db": "ts-node src/database/init.ts"
+  },
+  "keywords": [
+    "dashboard",
+    "client",
+    "seo",
+    "reports"
+  ],
+  "author": "WELTO Digital",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "papaparse": "^5.5.3",
+    "recharts": "^3.6.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^1.4.13",
+    "@types/node": "^22.9.4",
+    "@types/papaparse": "^5.5.2",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
