@@ -24,6 +24,25 @@ export async function GET(
       );
     }
 
+    // Get client data
+    const { data: clientData, error: clientError } = await supabase
+      .from('users')
+      .select('username, client_id, created_at, start_date, notes, map_image, reviews_start_count')
+      .eq('client_id', params.client_id)
+      .eq('role', 'client')
+      .single();
+
+    if (clientError) {
+      throw clientError;
+    }
+
+    if (!clientData) {
+      return NextResponse.json(
+        { error: 'Client not found' },
+        { status: 404 }
+      );
+    }
+
     // Get recent reports count
     const { count: reportCount, error: reportError } = await supabase
       .from('reports')
@@ -60,7 +79,13 @@ export async function GET(
     }));
 
     return NextResponse.json({
-      client_id: params.client_id,
+      client_id: clientData.client_id,
+      username: clientData.username,
+      created_at: clientData.created_at,
+      start_date: clientData.start_date,
+      notes: clientData.notes,
+      map_image: clientData.map_image,
+      reviews_start_count: clientData.reviews_start_count,
       reports: {
         total: reportCount || 0
       },

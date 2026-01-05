@@ -81,6 +81,16 @@ interface LeadPotentialData {
   };
 }
 
+interface ClientOverview {
+  client_id: string;
+  username: string;
+  created_at: string;
+  start_date?: string;
+  notes?: string;
+  map_image?: string;
+  reviews_start_count?: number;
+}
+
 interface ClientDashboardViewProps {
   clientId: string;
   token: string;
@@ -102,6 +112,7 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
   const [searchQueries, setSearchQueries] = useState<SearchQuery[]>([]);
   const [topPages, setTopPages] = useState<TopPage[]>([]);
   const [leadPotential, setLeadPotential] = useState<LeadPotentialData | null>(null);
+  const [clientOverview, setClientOverview] = useState<ClientOverview | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -110,7 +121,7 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
       setLoading(true);
 
       // Fetch metrics
-      const metricsResponse = await fetch(`http://localhost:5001/api/dashboard/${clientId}/metrics`, {
+      const metricsResponse = await fetch(`/api/dashboard/${clientId}/metrics`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -120,7 +131,7 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
       }
 
       // Fetch search queries
-      const queriesResponse = await fetch(`http://localhost:5001/api/admin/clients/${clientId}/search-queries`, {
+      const queriesResponse = await fetch(`/api/admin/clients/${clientId}/search-queries`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -130,7 +141,7 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
       }
 
       // Fetch top pages
-      const pagesResponse = await fetch(`http://localhost:5001/api/admin/clients/${clientId}/top-pages`, {
+      const pagesResponse = await fetch(`/api/admin/clients/${clientId}/top-pages`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -140,13 +151,23 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
       }
 
       // Fetch lead potential
-      const leadResponse = await fetch(`http://localhost:5001/api/dashboard/${clientId}/lead-potential`, {
+      const leadResponse = await fetch(`/api/dashboard/${clientId}/lead-potential`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
       if (leadResponse.ok) {
         const leadData = await leadResponse.json();
         setLeadPotential(leadData);
+      }
+
+      // Fetch client overview
+      const overviewResponse = await fetch(`/api/dashboard/${clientId}/overview`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      if (overviewResponse.ok) {
+        const overviewData = await overviewResponse.json();
+        setClientOverview(overviewData);
       }
 
     } catch (err) {
@@ -206,30 +227,81 @@ export default function ClientDashboardView({ clientId, token }: ClientDashboard
         </div>
       )}
 
-      {/* Lead Potential Overview */}
+      {/* Client Overview */}
+      {clientOverview && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Notes from WELTO */}
+          {clientOverview.notes && (
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="text-lg font-semibold text-text-dark mb-4 flex items-center">
+                📝 Notes from WELTO
+              </h3>
+              <div className="text-gray-700 leading-relaxed">
+                {clientOverview.notes}
+              </div>
+            </div>
+          )}
+
+          {/* Started with WELTO */}
+          {clientOverview.start_date && (
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="text-lg font-semibold text-text-dark mb-4 flex items-center">
+                📅 Started with WELTO
+              </h3>
+              <div className="text-2xl font-bold text-primary-blue mb-2">
+                {new Date(clientOverview.start_date).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                })}
+              </div>
+              <div className="text-right">
+                <span className="text-sm text-gray-600">Days with WELTO</span>
+                <div className="text-2xl font-bold text-emerald-600">
+                  {Math.floor((new Date().getTime() - new Date(clientOverview.start_date).getTime()) / (1000 * 60 * 60 * 24))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Estimated Lead Value */}
       {leadPotential && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-            <h3 className="text-lg font-semibold text-text-dark mb-4">This Month's Value</h3>
-            <div className="text-3xl font-bold text-emerald-600 mb-2">
-              ${leadPotential.current_month.total_value.toLocaleString()}
+            <h3 className="text-lg font-semibold text-text-dark mb-4">Estimated Lead Value</h3>
+            <div className="mb-4">
+              <div className="text-sm text-gray-600 mb-1">
+                {new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
+              </div>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">
+                £{leadPotential.current_month.total_value.toLocaleString()}
+              </div>
+              <p className="text-gray-700 text-sm">
+                From {leadPotential.current_month.total_clicks.toLocaleString()} total clicks and phone calls
+              </p>
+              <p className="text-gray-600 text-xs mt-1">
+                Based on £{leadPotential.lead_value.toLocaleString()} estimated job value at {leadPotential.conversion_rate}% conversion rate
+              </p>
             </div>
-            <p className="text-gray-700">
-              From {leadPotential.current_month.total_clicks.toLocaleString()} total clicks
-            </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-            <h3 className="text-lg font-semibold text-text-dark mb-4">Total Value Since Start</h3>
+            <h3 className="text-lg font-semibold text-text-dark mb-4">Total Value Since Started with WELTO</h3>
             <div className="text-3xl font-bold text-primary-blue mb-2">
-              ${leadPotential.since_start.total_value.toLocaleString()}
+              £{leadPotential.since_start.total_value.toLocaleString()}
             </div>
-            <p className="text-gray-700">
-              From {leadPotential.since_start.total_clicks.toLocaleString()} total clicks
+            <p className="text-gray-700 text-sm">
+              From {leadPotential.since_start.total_clicks.toLocaleString()} total clicks and phone calls since {leadPotential.since_start.start_date ? new Date(leadPotential.since_start.start_date).toLocaleDateString('en-GB') : 'No data available'}
+            </p>
+            <p className="text-gray-600 text-xs mt-1">
+              Based on £{leadPotential.lead_value.toLocaleString()} estimated job value at {leadPotential.conversion_rate}% conversion rate
             </p>
           </div>
         </div>
       )}
+
 
       {/* Charts */}
       {chartData.length > 0 ? (
