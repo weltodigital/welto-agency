@@ -44,6 +44,7 @@
 
 .blog-articles .article-card .read-more-btn {
     margin-top: 1rem;
+    color: white !important;
 }
 
 .blog-articles .article-date {
