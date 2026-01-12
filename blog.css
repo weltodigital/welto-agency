@@ -58,6 +58,10 @@
 /* Center article meta (date and read time) */
 .article-meta {
     text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin: 1.5rem auto !important;
 }
 
 .blog-articles .article-date {
