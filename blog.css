@@ -55,6 +55,11 @@
     color: white !important;
 }
 
+/* Center article meta (date and read time) */
+.article-meta {
+    text-align: center !important;
+}
+
 .blog-articles .article-date {
     color: var(--primary-yellow) !important;
     background: var(--primary-blue) !important;
