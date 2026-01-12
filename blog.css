@@ -18,12 +18,32 @@
 }
 
 /* Specific blog card styling */
-.blog-articles .article-card h2 a {
+.blog-articles .article-card {
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.blog-articles .article-card h3 {
+    margin-bottom: 1rem;
+}
+
+.blog-articles .article-card h3 a {
     color: var(--primary-blue) !important;
+    text-decoration: none;
+}
+
+.blog-articles .article-card h3 a:hover {
+    color: var(--light-blue) !important;
 }
 
 .blog-articles .article-card p {
     color: #666 !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.blog-articles .article-card .read-more-btn {
+    margin-top: 1rem;
 }
 
 .blog-articles .article-date {
