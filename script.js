@@ -41,16 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Header scroll effect
+// Header scroll effect — subtle elevation on the dark header
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (header) {
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+            header.style.boxShadow = '0 1px 0 0 var(--ink-border)';
         } else {
-            header.style.background = 'var(--white)';
-            header.style.backdropFilter = 'none';
+            header.style.boxShadow = 'none';
         }
     }
 });

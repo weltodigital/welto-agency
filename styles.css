@@ -6,7 +6,26 @@
 }
 
 :root {
-    /* Brand Colors */
+    /* ===================================================================
+       WELTO Rebrand 2026 — Brand foundations
+       Use these tokens everywhere. No raw hex values in component code.
+       =================================================================== */
+    --ink: #0A0A0A;            /* Primary dark surface */
+    --ink-elevated: #1A1A18;   /* Cards, elevated surfaces on dark */
+    --ink-border: #2A2A28;     /* Hairline borders on dark */
+    --bone: #F5F4F0;           /* Light surface, body text on ink */
+    --bone-muted: #C8C7C0;     /* Body text on dark backgrounds */
+    --mute: #888780;           /* Secondary/tertiary text */
+    --signal: #E8FF4D;         /* Accent — CTAs, highlights, logo dot */
+
+    /* Section rhythm (8px base grid) */
+    --section-pad-desktop: 96px;
+    --section-pad-tablet: 64px;
+    --section-pad-mobile: 48px;
+    --container-gutter: 32px;
+
+    /* Legacy brand colours — retained for pages not yet rebranded.
+       To be removed in Phase 9 once all pages use the tokens above. */
     --primary-blue: #004bad;
     --light-blue: #0066cc;
     --dark-blue: #003380;
@@ -72,55 +91,59 @@
 
 body {
     font-family: var(--font-primary);
+    font-weight: 400;
     line-height: 1.6;
     color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--container-gutter);
 }
 
-/* Typography System */
+/* Typography System — WELTO Rebrand 2026 type scale (Inter 400/500 only) */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 500;
+    line-height: 1.1;
     margin-bottom: var(--s-lg);
     color: var(--text-dark);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
 }
 
 h1 {
-    font-size: var(--text-5xl);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: 52px;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
 }
 
 h2 {
-    font-size: var(--text-4xl);
-    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
 h3 {
-    font-size: var(--text-3xl);
-    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 h4 {
-    font-size: var(--text-2xl);
-    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
 }
 
 h5 {
-    font-size: var(--text-xl);
-    font-weight: 600;
+    font-size: 16px;
 }
 
 h6 {
-    font-size: var(--text-lg);
-    font-weight: 600;
+    font-size: 13px;
 }
 
 p {
@@ -157,59 +180,75 @@ p {
 .text-light { color: var(--text-light); }
 .text-muted { color: var(--text-muted); }
 
-/* Button System */
+/* ===================================================================
+   Button System — WELTO Rebrand 2026
+   .btn-primary   Signal yellow bg, ink text, trailing arrow. One per screen.
+   .btn-secondary Transparent, bone text, hairline border. No arrow.
+   .btn-tertiary  Inline link, bone text, Signal underline.
+   =================================================================== */
 .btn {
-    padding: var(--s-md) var(--s-xl);
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: var(--text-base);
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--s-sm);
-    text-align: center;
-    position: relative;
-    outline: none;
+    gap: 8px;
+    padding: 14px 22px;
+    border: 1px solid transparent;
+    border-radius: 6px;
     font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+    outline: none;
 }
 
 .btn-primary {
-    background: var(--primary-blue);
-    color: var(--white);
-    box-shadow: var(--box-shadow-sm);
+    background: var(--signal);
+    color: var(--ink);
+    border-color: var(--signal);
 }
 
 .btn-primary:hover {
-    background: var(--dark-blue);
-    transform: translateY(-1px);
-    box-shadow: var(--box-shadow);
+    background: #f0ff7a;
+    border-color: #f0ff7a;
 }
 
 .btn-primary:active {
-    transform: translateY(0);
-    box-shadow: var(--box-shadow-sm);
+    background: #d8ef3d;
 }
 
 .btn-secondary {
-    background: var(--primary-yellow);
-    color: var(--white);
-    box-shadow: var(--box-shadow-sm);
-    border-radius: 50px;
+    background: transparent;
+    color: var(--bone);
+    border-color: var(--ink-border);
 }
 
 .btn-secondary:hover {
-    background: var(--dark-yellow);
-    transform: translateY(-1px);
-    box-shadow: var(--box-shadow);
+    border-color: var(--mute);
+    color: var(--bone);
 }
 
 .btn-secondary:active {
-    transform: translateY(0);
-    box-shadow: var(--box-shadow-sm);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Tertiary — inline text link with a thin Signal underline */
+.btn-tertiary {
+    display: inline;
+    color: var(--bone);
+    text-decoration: underline;
+    text-decoration-color: var(--signal);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    font-weight: 400;
+    transition: color 0.18s ease;
+}
+
+.btn-tertiary:hover {
+    color: var(--signal);
 }
 
 .btn-outline {
@@ -316,7 +355,7 @@ p {
 }
 
 .section {
-    padding: var(--section-padding);
+    padding: var(--section-pad-desktop) 0;
 }
 
 .section-sm {
@@ -384,25 +423,16 @@ p {
 .gap-2xl { gap: var(--s-2xl); }
 
 /* Responsive Design System */
-@media (min-width: 768px) {
-    /* Tablet responsive typography */
-    h1 { font-size: var(--text-6xl); }
-    h2 { font-size: var(--text-5xl); }
-
-    .container {
-        padding: 0 var(--s-lg);
-    }
-
-    .section {
-        padding: var(--s-5xl) 0;
-    }
+@media (max-width: 1024px) and (min-width: 768px) {
+    /* Tablet — section rhythm */
+    .section { padding: var(--section-pad-tablet) 0; }
 }
 
 @media (max-width: 767px) {
     /* Mobile responsive typography */
-    h1 { font-size: var(--text-4xl); }
-    h2 { font-size: var(--text-3xl); }
-    h3 { font-size: var(--text-2xl); }
+    h1 { font-size: 36px; letter-spacing: -0.03em; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 22px; }
 
     .col-2, .col-3, .col-4, .col-6, .col-8 {
         flex: 0 0 100%;
@@ -410,7 +440,7 @@ p {
     }
 
     .section {
-        padding: var(--s-3xl) 0;
+        padding: var(--section-pad-mobile) 0;
     }
 
     .nav-menu {
@@ -422,21 +452,21 @@ p {
     }
 }
 
-/* Header - Modern Layout */
+/* ===================================================================
+   Header — WELTO Rebrand 2026 (dark surface, hairline border)
+   =================================================================== */
 .header {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
+    background: var(--ink);
+    border-bottom: 1px solid var(--ink-border);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: var(--transition);
 }
 
 .navbar {
-    padding: var(--s-lg) 0;
+    padding: 18px 0;
 }
 
 .navbar .container {
@@ -446,24 +476,24 @@ p {
     gap: var(--s-xl);
 }
 
+/* Legacy <img> logo — kept for pages not yet rebranded (Phase 9) */
 .logo {
-    height: 48px;
+    height: 40px;
     width: auto;
     max-width: 200px;
     margin: 0;
-    transition: var(--transition);
-}
-
-.logo:hover {
-    transform: scale(1.02);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--s-2xl);
+    gap: 32px;
     margin: 0;
     padding: 0;
+}
+
+.nav-cta {
+    flex-shrink: 0;
 }
 
 .nav-contact {
@@ -522,47 +552,78 @@ a.nav-contact-btn,
 /* Navigation Links */
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: var(--text-base);
-    transition: var(--transition);
-    position: relative;
-    padding: var(--s-sm) 0;
+    color: var(--bone-muted);
+    font-weight: 400;
+    font-size: 14px;
+    transition: color 0.18s ease;
 }
 
 .nav-link:hover {
-    color: var(--primary-blue);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-blue);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
+    color: var(--bone);
 }
 
 .hamburger {
     display: none;
     flex-direction: column;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 4px;
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
-    background: var(--text-dark);
-    margin: 3px 0;
-    transition: var(--transition);
+    width: 24px;
+    height: 2px;
+    background: var(--bone);
+    transition: all 0.2s ease;
+}
+
+/* Mobile nav — dark dropdown panel */
+@media (max-width: 767px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--ink);
+        border-bottom: 1px solid var(--ink-border);
+        padding: 8px var(--container-gutter) 16px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-cta {
+        margin-left: auto;
+        margin-right: 12px;
+        padding: 10px 16px;
+    }
+
+    .nav-menu li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--ink-border);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 /* Hero Section */
@@ -4697,4 +4758,68 @@ body[data-page="seo-plumber"] .hero {
 .feature-list li p {
     margin: 0;
     line-height: 1.6;
+}
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Shared components
+   Wordmark, eyebrow, section heading/lead pattern.
+   =================================================================== */
+
+/* --- Wordmark ------------------------------------------------------- */
+.wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--bone);            /* dark-mode (on ink) — default */
+}
+
+.wordmark--on-bone {
+    color: var(--ink);             /* light-mode (on bone) variant */
+}
+
+.wordmark-dot {
+    width: 6px;
+    height: 6px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background: var(--signal);
+    align-self: center;
+    transform: translateY(-1px);   /* nudge toward cap-height centre */
+}
+
+/* --- Section pattern ----------------------------------------------- */
+.eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 16px;
+}
+
+.section-heading {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+}
+
+.section-lead {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--bone-muted);
+    max-width: 60ch;
+}
+
+@media (max-width: 767px) {
+    .section-heading { font-size: 28px; }
+    .section-lead { font-size: 16px; }
 }
