@@ -4823,3 +4823,92 @@ body[data-page="seo-plumber"] .hero {
     .section-heading { font-size: 28px; }
     .section-lead { font-size: 16px; }
 }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 2: Homepage hero
+   =================================================================== */
+.hero-home {
+    background: var(--ink);
+    padding: 168px 0 96px;          /* top clears the fixed header */
+}
+
+.hero-home .hero-inner {
+    max-width: 780px;
+}
+
+.hero-home .eyebrow {
+    margin-bottom: 24px;
+}
+
+.hero-home h1 {
+    font-size: 52px;
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    color: var(--bone);
+    margin-bottom: 24px;
+}
+
+.hero-highlight {
+    background: var(--signal);
+    color: var(--ink);
+    padding: 0 8px;
+    border-radius: 4px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.hero-home .hero-subhead {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--bone-muted);
+    max-width: 60ch;
+    margin-bottom: 32px;
+}
+
+.hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-cta-aside {
+    margin: 0;
+    font-size: 14px;
+    color: var(--mute);
+}
+
+.hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--ink-border);
+}
+
+.proof-item {
+    font-size: 14px;
+    color: var(--mute);
+}
+
+.proof-figure {
+    color: var(--bone);
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .hero-home {
+        padding: 116px 0 56px;
+    }
+
+    .hero-home h1 {
+        font-size: 36px;
+        letter-spacing: -0.03em;
+    }
+
+    .hero-home .hero-subhead {
+        font-size: 16px;
+    }
+}
