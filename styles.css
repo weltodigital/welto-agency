@@ -4912,3 +4912,76 @@ body[data-page="seo-plumber"] .hero {
         font-size: 16px;
     }
 }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 3: Services section
+   =================================================================== */
+.services-home {
+    background: var(--ink);
+    padding: var(--section-pad-desktop) 0;
+}
+
+.services-home .eyebrow {
+    margin-bottom: 16px;
+}
+
+.services-home .section-heading {
+    color: var(--bone);
+    margin-bottom: 48px;
+}
+
+.services-home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.service-block {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.service-block h3 {
+    color: var(--bone);
+    margin-bottom: 12px;
+}
+
+.service-block p {
+    color: var(--bone-muted);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-points li {
+    color: var(--mute);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card-points li:not(:first-child)::before {
+    content: '·';
+    color: var(--signal);
+    margin: 0 8px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .services-home { padding: var(--section-pad-tablet) 0; }
+    .services-home-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+    .services-home { padding: var(--section-pad-mobile) 0; }
+    .services-home .section-heading { margin-bottom: 32px; }
+    .services-home-grid { grid-template-columns: 1fr; }
+}
