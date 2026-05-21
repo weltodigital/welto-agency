@@ -5271,3 +5271,157 @@ body[data-page="seo-plumber"] .hero {
     .final-cta .section-heading { margin-bottom: 16px; }
     .final-cta-body { font-size: 16px; }
 }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 9: cascade to inner pages
+   Recolours the legacy page templates to the dark system.
+   Applied via <body class="page-dark">.
+   =================================================================== */
+body.page-dark {
+    background: var(--ink);
+    color: var(--bone-muted);
+}
+
+body.page-dark section {
+    background: var(--ink);
+}
+
+body.page-dark h1,
+body.page-dark h2,
+body.page-dark h3,
+body.page-dark h4,
+body.page-dark h5,
+body.page-dark h6 {
+    color: var(--bone);
+}
+
+body.page-dark p,
+body.page-dark li {
+    color: var(--bone-muted);
+}
+
+body.page-dark strong {
+    color: var(--bone);
+}
+
+body.page-dark a {
+    color: var(--bone);
+}
+
+/* Sub-page header (mini hero) */
+body.page-dark .page-header {
+    padding: 140px 0 64px;
+    text-align: left;
+}
+
+body.page-dark .page-header h1 {
+    margin-bottom: 16px;
+}
+
+body.page-dark .page-header p {
+    max-width: 60ch;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--bone-muted);
+}
+
+/* Intro / section-header blocks */
+body.page-dark .section-header p,
+body.page-dark .contact-intro p {
+    color: var(--mute);
+}
+
+/* Card-like blocks → elevated surface, hairline border */
+body.page-dark .mission-item,
+body.page-dark .value-item,
+body.page-dark .contact-option,
+body.page-dark .benefit-item,
+body.page-dark .faq-item,
+body.page-dark .contact-details,
+body.page-dark .achievements,
+body.page-dark .consultation-agenda {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+/* Drop legacy decorative icons */
+body.page-dark .mission-icon,
+body.page-dark .contact-option-icon,
+body.page-dark .benefit-icon,
+body.page-dark .agenda-icon,
+body.page-dark .founder-credentials {
+    display: none;
+}
+
+/* Founder photo */
+body.page-dark .founder-image img {
+    border-radius: 12px;
+    border: 1px solid var(--ink-border);
+}
+
+/* Secondary text */
+body.page-dark .email-note {
+    color: var(--mute);
+}
+
+/* Buttons — beat legacy contextual overrides */
+body.page-dark .btn-primary {
+    background: var(--signal);
+    color: var(--ink);
+    border: 1px solid var(--signal);
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+body.page-dark .btn-primary:hover {
+    background: #f0ff7a;
+}
+
+body.page-dark .btn-secondary {
+    background: transparent;
+    color: var(--bone);
+    border: 1px solid var(--ink-border);
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+body.page-dark .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--mute);
+}
+
+/* Phase 9 — fixes for legacy page quirks */
+body.page-dark .page-header-content {
+    max-width: 760px;
+    margin: 0;
+}
+
+body.page-dark .page-header p {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+body.page-dark .agenda-item span,
+body.page-dark .agenda-item,
+body.page-dark .contact-details p,
+body.page-dark .founder-credentials h3,
+body.page-dark .founder-credentials p {
+    color: var(--bone-muted);
+}
+
+body.page-dark .consultation-agenda {
+    padding: 24px;
+}
+
+body.page-dark .agenda-item {
+    display: flex;
+    gap: 8px;
+}
