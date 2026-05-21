@@ -5483,3 +5483,26 @@ body.page-dark .contact-details p {
 body.page-dark .feature h4 {
     color: var(--bone);
 }
+
+/* Phase 9 — city/county "areas served" section */
+body.page-dark .industry-card {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+body.page-dark .industry-icon {
+    display: none;
+}
+
+body.page-dark .industry-card h3,
+body.page-dark .industry-card h3 a {
+    color: var(--bone);
+}
+
+body.page-dark .industry-keywords .keyword {
+    background: var(--ink);
+    border: 1px solid var(--ink-border);
+    color: var(--mute);
+}
