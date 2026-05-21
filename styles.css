@@ -1803,17 +1803,18 @@ section {
 }
 
 /* Footer */
+/* Footer — WELTO Rebrand 2026 */
 .footer {
-    background: var(--text-dark);
-    color: var(--white);
-    padding: 3rem 0 1rem;
+    background: var(--ink);
+    color: var(--bone-muted);
+    padding: 64px 0 32px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    gap: 64px;
+    margin-bottom: 32px;
     flex-wrap: wrap;
 }
 
@@ -1822,48 +1823,59 @@ section {
     min-width: 280px;
 }
 
+.footer-brand p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--mute);
+}
+
 .footer-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 32px;
     flex: 1;
     min-width: 600px;
 }
 
 .footer-social {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .footer-social a {
-    color: #bdc3c7;
-    transition: var(--transition);
+    color: var(--mute);
+    transition: color 0.18s ease;
 }
 
 .footer-social a:hover {
-    color: var(--primary-blue);
+    color: var(--bone);
 }
 
 .footer-bottom-content {
-    text-align: center;
+    text-align: left;
 }
 
 .footer-bottom-content p {
-    margin: 0.5rem 0;
+    margin: 4px 0;
+    font-size: 13px;
+    color: var(--mute);
 }
 
 .footer-section h3,
 .footer-section h4 {
-    color: var(--white);
-    margin-bottom: 1rem;
+    color: var(--bone);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 
 .footer-logo {
-    height: 60px;
+    height: 32px;
     width: auto;
-    max-width: 250px;
-    margin-bottom: 1rem;
+    max-width: 200px;
+    margin-bottom: 16px;
 }
 
 .footer-section ul {
@@ -1871,33 +1883,33 @@ section {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-    color: #bdc3c7;
+    color: var(--mute);
+    font-size: 14px;
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.18s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--white);
+    color: var(--bone);
 }
 
 .footer-bottom {
-    border-top: 1px solid #34495e;
-    padding-top: 1rem;
-    text-align: center;
-    color: #95a5a6;
+    border-top: 1px solid var(--ink-border);
+    padding-top: 32px;
+    color: var(--mute);
 }
 
 .footer-bottom a {
-    color: #bdc3c7;
+    color: var(--bone-muted);
     text-decoration: none;
 }
 
 .footer-bottom a:hover {
-    color: var(--white);
+    color: var(--bone);
 }
 
 /* Responsive Design */
@@ -5201,4 +5213,61 @@ body[data-page="seo-plumber"] .hero {
     .why-welto { padding: var(--section-pad-mobile) 0; }
     .why-welto .section-heading { margin-bottom: 32px; }
     .why-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 7: Final CTA section
+   =================================================================== */
+.final-cta {
+    background: var(--ink);
+    padding: var(--section-pad-desktop) 0;
+    border-top: 1px solid var(--ink-border);
+}
+
+.final-cta-inner {
+    max-width: 680px;
+}
+
+.final-cta .eyebrow {
+    margin-bottom: 16px;
+}
+
+.final-cta .section-heading {
+    color: var(--bone);
+    margin-bottom: 20px;
+}
+
+.final-cta-body {
+    margin: 0 0 32px;
+    max-width: 60ch;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--bone-muted);
+}
+
+.final-cta-note {
+    margin: 24px 0 0;
+    font-size: 14px;
+    color: var(--mute);
+}
+
+.final-cta-note a {
+    color: var(--bone-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--ink-border);
+    text-underline-offset: 3px;
+}
+
+.final-cta-note a:hover {
+    color: var(--bone);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .final-cta { padding: var(--section-pad-tablet) 0; }
+}
+
+@media (max-width: 767px) {
+    .final-cta { padding: var(--section-pad-mobile) 0; }
+    .final-cta .section-heading { margin-bottom: 16px; }
+    .final-cta-body { font-size: 16px; }
 }
