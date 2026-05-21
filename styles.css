@@ -5154,3 +5154,51 @@ body[data-page="seo-plumber"] .hero {
     .trade-list { grid-template-columns: 1fr; column-gap: 0; }
     .trade-name { font-size: 20px; }
 }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 6: Why WELTO section
+   =================================================================== */
+.why-welto {
+    background: var(--ink);
+    padding: var(--section-pad-desktop) 0;
+}
+
+.why-welto .eyebrow {
+    margin-bottom: 16px;
+}
+
+.why-welto .section-heading {
+    color: var(--bone);
+    margin-bottom: 48px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+.why-lead {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--bone);
+}
+
+.why-body {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--bone-muted);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .why-welto { padding: var(--section-pad-tablet) 0; }
+    .why-grid { gap: 32px; }
+}
+
+@media (max-width: 767px) {
+    .why-welto { padding: var(--section-pad-mobile) 0; }
+    .why-welto .section-heading { margin-bottom: 32px; }
+    .why-grid { grid-template-columns: 1fr; gap: 32px; }
+}
