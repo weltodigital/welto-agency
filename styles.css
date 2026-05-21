@@ -5425,3 +5425,61 @@ body.page-dark .agenda-item {
     display: flex;
     gap: 8px;
 }
+
+/* Phase 9 — trade page components (hero, services, process, contact) */
+body.page-dark .hero {
+    color: var(--bone);
+}
+
+body.page-dark .hero-subtitle,
+body.page-dark .section-intro {
+    color: var(--bone-muted);
+}
+
+body.page-dark .hero-title .highlight,
+body.page-dark .highlight {
+    background: none;
+    -webkit-text-fill-color: var(--signal);
+    color: var(--signal);
+}
+
+body.page-dark .stat-number {
+    color: var(--bone);
+}
+
+body.page-dark .stat-text {
+    color: var(--mute);
+}
+
+body.page-dark .service-card,
+body.page-dark .process-step {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+body.page-dark .service-icon,
+body.page-dark .benefit-icon {
+    display: none;
+}
+
+body.page-dark .process-step-number {
+    background: transparent;
+    color: var(--signal);
+    border: 1px solid var(--ink-border);
+}
+
+body.page-dark .service-features li {
+    color: var(--bone-muted);
+}
+
+body.page-dark .benefit,
+body.page-dark .benefit span,
+body.page-dark .contact-details p {
+    color: var(--bone-muted);
+}
+
+body.page-dark .feature h4 {
+    color: var(--bone);
+}
