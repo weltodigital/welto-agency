@@ -5079,3 +5079,78 @@ body[data-page="seo-plumber"] .hero {
     .case-stats { grid-template-columns: 1fr; gap: 20px; }
     .case-stat-figure { font-size: 30px; }
 }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 5: Industries section
+   =================================================================== */
+.industries-home {
+    background: var(--ink);
+    padding: var(--section-pad-desktop) 0;
+}
+
+.industries-home .eyebrow {
+    margin-bottom: 16px;
+}
+
+.industries-home .section-heading {
+    color: var(--bone);
+    margin-bottom: 24px;
+}
+
+.trade-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+}
+
+.trade-item {
+    border-top: 1px solid var(--ink-border);
+}
+
+.trade-link {
+    display: block;
+    padding: 24px 0;
+    text-decoration: none;
+}
+
+.trade-name {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+}
+
+.trade-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.trade-link:hover .trade-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.trade-desc {
+    display: block;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--mute);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .industries-home { padding: var(--section-pad-tablet) 0; }
+}
+
+@media (max-width: 767px) {
+    .industries-home { padding: var(--section-pad-mobile) 0; }
+    .trade-list { grid-template-columns: 1fr; column-gap: 0; }
+    .trade-name { font-size: 20px; }
+}
