@@ -1099,8 +1099,8 @@ section {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--primary-yellow);
-    font-weight: bold;
+    color: var(--mute);
+    font-weight: 500;
 }
 
 /* Industries Section */
@@ -2409,8 +2409,8 @@ html {
 }
 
 .nav-link.active {
-    color: var(--primary-blue);
-    font-weight: 600;
+    color: var(--bone);
+    font-weight: 500;
 }
 
 /* Responsive Design for Contact Page */
@@ -3401,8 +3401,8 @@ body[data-page="seo-plumber"] .hero {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--success-green);
-    font-weight: bold;
+    color: var(--mute);
+    font-weight: 500;
     font-size: 1.1rem;
 }
 
