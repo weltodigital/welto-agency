@@ -5600,3 +5600,77 @@ body.page-dark .size-specs,
 body.page-dark .spec-details { color: var(--bone-muted); }
 
 body.page-dark .size-main { color: var(--bone); }
+
+/* ===================================================================
+   WELTO Rebrand 2026 — Phase 9: blog dark theme (overrides blog.css)
+   =================================================================== */
+body.page-dark .blog-header {
+    background: var(--ink) !important;
+    border-bottom: 1px solid var(--ink-border);
+}
+body.page-dark .blog-header::before { display: none; }
+body.page-dark .blog-header h1 { color: var(--bone) !important; }
+
+body.page-dark .breadcrumbs,
+body.page-dark .blog-breadcrumbs,
+body.page-dark .article-meta,
+body.page-dark .article-meta span { color: var(--mute); }
+body.page-dark .breadcrumbs a,
+body.page-dark .blog-breadcrumbs a { color: var(--bone-muted); }
+
+body.page-dark .blog-container { background: var(--ink); }
+body.page-dark .blog-content {
+    background: var(--ink-elevated) !important;
+    border: 1px solid var(--ink-border);
+}
+body.page-dark .blog-content::before,
+body.page-dark .blog-content::after,
+body.page-dark .blog-content h2::before,
+body.page-dark .blog-content h2::after,
+body.page-dark .table-of-contents::before { display: none; }
+
+body.page-dark .blog-content h2,
+body.page-dark .blog-content h3,
+body.page-dark .blog-content h4 {
+    background: none !important;
+    color: var(--bone);
+}
+body.page-dark .blog-content p,
+body.page-dark .blog-content li { color: var(--bone-muted); }
+body.page-dark .blog-content strong { color: var(--bone); }
+body.page-dark .blog-content a {
+    color: var(--bone);
+    text-decoration: underline;
+    text-decoration-color: var(--signal);
+    text-underline-offset: 3px;
+}
+
+body.page-dark .table-of-contents,
+body.page-dark .highlight-box,
+body.page-dark .comparison-table,
+body.page-dark .cta-section,
+body.page-dark .blog-sidebar {
+    background: var(--ink) !important;
+    border: 1px solid var(--ink-border);
+}
+body.page-dark .table-of-contents h3 { color: var(--bone); background: none !important; }
+body.page-dark .table-of-contents a { color: var(--bone-muted); }
+
+body.page-dark table { color: var(--bone-muted); }
+body.page-dark th { color: var(--bone); }
+body.page-dark th, body.page-dark td { border-color: var(--ink-border); }
+
+body.page-dark .blog-articles .article-card {
+    background: var(--ink-elevated) !important;
+    border: 1px solid var(--ink-border);
+    box-shadow: none;
+}
+body.page-dark .blog-articles .article-card h3 a { color: var(--bone); }
+body.page-dark .blog-articles .article-card p { color: var(--bone-muted); }
+body.page-dark .read-more-btn { color: var(--signal); }
+
+body.page-dark .guarantee-card {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    box-shadow: none;
+}
