@@ -5506,3 +5506,97 @@ body.page-dark .industry-keywords .keyword {
     border: 1px solid var(--ink-border);
     color: var(--mute);
 }
+
+/* Phase 9 — tool pages (forms, tool UI, JS-generated results) */
+body.page-dark label {
+    color: var(--bone-muted);
+    font-weight: 500;
+}
+
+body.page-dark .tool-input,
+body.page-dark input[type="text"],
+body.page-dark input[type="url"],
+body.page-dark input[type="email"],
+body.page-dark input[type="tel"],
+body.page-dark input[type="number"],
+body.page-dark input[type="time"],
+body.page-dark select,
+body.page-dark textarea {
+    background: var(--ink);
+    border: 1px solid var(--ink-border);
+    color: var(--bone);
+}
+
+body.page-dark .tool-input:focus,
+body.page-dark input:focus,
+body.page-dark select:focus,
+body.page-dark textarea:focus {
+    border-color: var(--mute);
+    outline: none;
+}
+
+body.page-dark ::placeholder { color: var(--mute); }
+body.page-dark option { background: var(--ink); color: var(--bone); }
+
+body.page-dark .tool-container,
+body.page-dark .tool-results,
+body.page-dark .step-card,
+body.page-dark .stat-card,
+body.page-dark .result-card,
+body.page-dark .size-card,
+body.page-dark .preview-box,
+body.page-dark .schema-output {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+body.page-dark .tool-feature { color: var(--bone-muted); }
+
+body.page-dark .step-number {
+    background: transparent;
+    color: var(--signal);
+    border: 1px solid var(--ink-border);
+}
+
+body.page-dark .keyword-count,
+body.page-dark .stat-label { color: var(--mute); }
+
+body.page-dark .keyword-item,
+body.page-dark .recommendation-item,
+body.page-dark .category-score-detail,
+body.page-dark .category-score-header {
+    background: var(--ink);
+    border: 1px solid var(--ink-border);
+    color: var(--bone-muted);
+}
+
+/* Phase 9 — image size guide unique components (recolour to dark) */
+body.page-dark .quick-reference-card,
+body.page-dark .spec-section,
+body.page-dark .technical-requirements,
+body.page-dark .post-types {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    box-shadow: none;
+}
+
+body.page-dark .reference-item,
+body.page-dark .requirement-card,
+body.page-dark .spec-item,
+body.page-dark .tip-card,
+body.page-dark .category-item,
+body.page-dark .post-type,
+body.page-dark .mistake-item {
+    background: var(--ink);
+    border: 1px solid var(--ink-border);
+    box-shadow: none;
+    color: var(--bone-muted);
+}
+
+body.page-dark .size-note,
+body.page-dark .size-specs,
+body.page-dark .spec-details { color: var(--bone-muted); }
+
+body.page-dark .size-main { color: var(--bone); }

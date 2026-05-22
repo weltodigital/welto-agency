@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Title Tag & Meta Description Checker | SEO Tool | WELTO Digital</title>
-    <meta name="description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO. Get instant feedback for your website's meta tags.">
+    <title>WELTO · Title tag & meta description checker</title>
+    <meta name="description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimise for better SEO. Get instant feedback for your website's meta tags.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Free Title Tag & Meta Description Checker | SEO Tool">
-    <meta property="og:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO.">
+    <meta property="og:title" content="WELTO · Title tag & meta description checker">
+    <meta property="og:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimise for better SEO.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weltodigital.com/title-tag-meta-description-checker/">
     <meta property="og:image" content="https://weltodigital.com/title-tag-meta-description-checker/title-checker-og.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free Title Tag & Meta Description Checker">
-    <meta name="twitter:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimize for better SEO.">
+    <meta name="twitter:title" content="WELTO · Title tag & meta description checker">
+    <meta name="twitter:description" content="Free SEO tool to check title tags and meta descriptions. Analyze length, preview in search results, and optimise for better SEO.">
     <meta name="twitter:image" content="https://weltodigital.com/title-tag-meta-description-checker/title-checker-twitter.jpg">
 
     <!-- Favicon -->
@@ -32,7 +32,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Title Tag & Meta Description Checker",
-        "description": "Free SEO tool to analyze and optimize title tags and meta descriptions for better search engine results",
+        "description": "Free SEO tool to analyze and optimise title tags and meta descriptions for better search engine results",
         "url": "https://weltodigital.com/title-tag-meta-description-checker/",
         "applicationCategory": "SEO Tools",
         "operatingSystem": "All",
@@ -99,25 +99,19 @@
     }
     </script>
 </head>
-<body>
+<body class="page-dark">
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="container">
-                <div class="nav-brand">
-                    <img src="../WELTO LOGO copy.png" alt="WELTO" class="logo">
-                </div>
+                <a href="../" class="wordmark" aria-label="WELTO home">WELTO<span class="wordmark-dot" aria-hidden="true"></span></a>
                 <ul class="nav-menu">
                     <li><a href="../services/" class="nav-link">Services</a></li>
-                    <li><a href="../#industries" class="nav-link">Industries</a></li>
                     <li><a href="../about/" class="nav-link">About</a></li>
                     <li><a href="../blog/" class="nav-link">Blog</a></li>
                 </ul>
-                <div class="nav-contact">
-                    <span class="nav-email">info@weltodigital.com</span>
-                    <a href="../contact/" class="nav-contact-btn">Contact</a>
-                </div>
-                <button class="hamburger">
+                <a href="../contact/" class="btn btn-primary nav-cta">Free audit →</a>
+                <button class="hamburger" aria-label="Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -130,8 +124,8 @@
     <section class="page-header tool-header">
         <div class="container">
             <div class="page-header-content">
-                <h1>Free Title Tag & Meta Description Checker</h1>
-                <p>Analyze your title tags and meta descriptions to ensure they're optimized for search engines. Get instant feedback on length, preview how they appear in Google, and improve your click-through rates.</p>
+                <h1>Free title tag & meta description checker</h1>
+                <p>Analyze your title tags and meta descriptions to ensure they're optimised for search engines. Get instant feedback on length, preview how they appear in Google, and improve your click-through rates.</p>
                 <div class="tool-features">
                     <span class="tool-feature">✓ Length Analysis</span>
                     <span class="tool-feature">✓ SERP Preview</span>
@@ -150,7 +144,7 @@
                     <div class="input-group">
                         <label for="urlInput">URL (Optional)</label>
                         <input type="url" id="urlInput" class="tool-input" placeholder="https://yourwebsite.com/page">
-                        <button id="fetchBtn" class="btn-secondary fetch-btn">Fetch Meta Tags</button>
+                        <button id="fetchBtn" class="btn btn-secondary fetch-btn">Fetch Meta Tags</button>
                     </div>
 
                     <div class="input-group">
@@ -171,12 +165,12 @@
                         <div class="input-feedback" id="descriptionFeedback"></div>
                     </div>
 
-                    <button id="analyzeBtn" class="btn-primary tool-generate-btn">Analyze Meta Tags</button>
+                    <button id="analyzeBtn" class="btn btn-primary tool-generate-btn">Analyze Meta Tags</button>
                 </div>
 
                 <!-- Results Section -->
                 <div class="tool-results" id="toolResults" style="display: none;">
-                    <h3>Search Result Preview</h3>
+                    <h3>Search result preview</h3>
 
                     <div class="serp-preview" id="serpPreview">
                         <div class="serp-url" id="serpUrl">https://yourwebsite.com</div>
@@ -186,7 +180,7 @@
 
                     <div class="analysis-grid">
                         <div class="analysis-card" id="titleAnalysis">
-                            <h4>Title Tag Analysis</h4>
+                            <h4>Title tag analysis</h4>
                             <div class="analysis-metrics">
                                 <div class="metric">
                                     <span class="metric-label">Length:</span>
@@ -201,7 +195,7 @@
                         </div>
 
                         <div class="analysis-card" id="descriptionAnalysis">
-                            <h4>Meta Description Analysis</h4>
+                            <h4>Meta description analysis</h4>
                             <div class="analysis-metrics">
                                 <div class="metric">
                                     <span class="metric-label">Length:</span>
@@ -217,7 +211,7 @@
                     </div>
 
                     <div class="overall-score" id="overallScore">
-                        <h4>Overall SEO Score</h4>
+                        <h4>Overall SEO score</h4>
                         <div class="score-display" id="scoreDisplay">
                             <span class="score-number" id="scoreNumber">-</span>
                             <span class="score-label">/ 100</span>
@@ -234,35 +228,35 @@
         <div class="container">
             <div class="benefits-content">
                 <div class="benefits-text">
-                    <h2>Why Use Our Title Tag & Meta Description Checker?</h2>
-                    <p>Professional SEO tool designed to help you optimize your meta tags for better search engine performance and higher click-through rates.</p>
+                    <h2>Why use our title tag & meta description checker?</h2>
+                    <p>Professional SEO tool designed to help you optimise your meta tags for better search engine performance and higher click-through rates.</p>
 
                     <div class="benefits-list">
                         <div class="benefit-item">
                             <div>
-                                <h4>SERP Preview</h4>
+                                <h4>Serp preview</h4>
                                 <p>See exactly how your title and description will appear in Google search results before publishing, ensuring optimal formatting and messaging.</p>
                             </div>
                         </div>
 
                         <div class="benefit-item">
                             <div>
-                                <h4>Length Optimization</h4>
+                                <h4>Length optimisation</h4>
                                 <p>Get real-time character counts and warnings when your title tags or descriptions are too long or too short for optimal search display.</p>
                             </div>
                         </div>
 
                         <div class="benefit-item">
                             <div>
-                                <h4>SEO Best Practices</h4>
+                                <h4>SEO best practices</h4>
                                 <p>Receive actionable recommendations based on current SEO guidelines to help your pages rank higher and perform better in search results.</p>
                             </div>
                         </div>
 
                         <div class="benefit-item">
                             <div>
-                                <h4>Click-Through Optimization</h4>
-                                <p>Optimized title tags and meta descriptions directly impact how often users click on your search results, increasing organic traffic.</p>
+                                <h4>Click-through optimisation</h4>
+                                <p>Optimised title tags and meta descriptions directly impact how often users click on your search results, increasing organic traffic.</p>
                             </div>
                         </div>
                     </div>
@@ -289,7 +283,7 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Frequently asked questions</h2>
 
             <div class="faq-grid">
                 <div class="faq-item">
@@ -304,7 +298,7 @@
 
                 <div class="faq-item">
                     <h3>Why are title tags important for SEO?</h3>
-                    <p>Title tags are crucial for SEO because they tell search engines and users what your page is about. They appear as the clickable headline in search results and are one of the most important on-page SEO factors. Well-optimized title tags can improve both rankings and click-through rates.</p>
+                    <p>Title tags are crucial for SEO because they tell search engines and users what your page is about. They appear as the clickable headline in search results and are one of the most important on-page SEO factors. Well-optimised title tags can improve both rankings and click-through rates.</p>
                 </div>
 
                 <div class="faq-item">
@@ -329,12 +323,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Need Help with SEO Optimization?</h2>
-                <p>While tools are helpful, sometimes you need expert guidance. Our SEO specialists can help optimize your entire website for better search engine performance.</p>
+                <h2>Need help with SEO optimisation?</h2>
+                <p>While tools are helpful, sometimes you need expert guidance. Our SEO specialists can help optimise your entire website for better search engine performance.</p>
 
                 <div class="cta-buttons">
-                    <a href="../contact/" class="btn-primary">Get SEO Help</a>
-                    <a href="../services/" class="btn-secondary">View Our Services</a>
+                    <a href="../contact/" class="btn btn-primary">Get SEO Help</a>
+                    <a href="../services/" class="btn btn-secondary">View Our Services</a>
                 </div>
             </div>
         </div>
@@ -345,8 +339,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="../WELTO LOGO copy.png" alt="WELTO Local SEO Agency" class="footer-logo">
-                    <p>Leading local SEO agency specialising in search marketing for trades and local businesses. We help electricians, plumbers, builders, tree surgeons, roofers, gas engineers, carpenters, and all tradespeople dominate their local markets across the UK.</p>
+                    <a href="../" class="wordmark" aria-label="WELTO home">WELTO<span class="wordmark-dot" aria-hidden="true"></span></a>
+                    <p>Local SEO for UK trades businesses. We help electricians, plumbers, roofers and other trades rank in local search and turn local searches into booked work.</p>
                 </div>
 
                                 <div class="footer-links">
@@ -414,7 +408,7 @@
 
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p>&copy; 2025 WELTO Limited | Registered in England & Wales. Company Number: 14630258</p>
+                    <p>&copy; 2026 WELTO Limited | Registered in England &amp; Wales. Company Number: 14630258</p>
                     <p>167-169 Great Portland Street, London, England, W1W 5PF</p>
                     <p>Email: <a href="mailto:info@weltodigital.com">info@weltodigital.com</a></p>
                 </div>
