@@ -5674,3 +5674,15 @@ body.page-dark .guarantee-card {
     border: 1px solid var(--ink-border);
     box-shadow: none;
 }
+
+/* Phase 9 — sitemap page */
+body.page-dark .sitemap-category,
+body.page-dark .sitemap-info {
+    background: var(--ink-elevated);
+    border: 1px solid var(--ink-border);
+    box-shadow: none;
+}
+
+body.page-dark .sitemap-category h2 {
+    border-bottom-color: var(--ink-border);
+}
