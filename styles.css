@@ -24,15 +24,6 @@
     --section-pad-mobile: 48px;
     --container-gutter: 32px;
 
-    /* Legacy brand colours - retained for pages not yet rebranded.
-       To be removed in Phase 9 once all pages use the tokens above. */
-    --primary-blue: #004bad;
-    --light-blue: #0066cc;
-    --dark-blue: #003380;
-    --primary-yellow: #fbb22f;
-    --light-yellow: #fdc55d;
-    --dark-yellow: #e6a02a;
-
     /* Text Colors */
     --text-dark: #2c3e50;
     --text-light: #7f8c8d;
@@ -252,15 +243,15 @@ p {
 }
 
 .btn-outline {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     border: none;
     border-radius: 50px;
 }
 
 .btn-outline:hover {
-    background: var(--dark-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     transform: translateY(-1px);
     box-shadow: var(--box-shadow);
 }
@@ -515,8 +506,8 @@ p {
 .nav-contact a.nav-contact-btn,
 a.nav-contact-btn,
 .nav-contact-btn {
-    background: var(--primary-yellow) !important;
-    color: var(--white) !important;
+    background: var(--signal);
+    color: var(--ink) !important;
     padding: var(--s-sm) var(--s-lg);
     border-radius: var(--border-radius-lg);
     text-decoration: none !important;
@@ -531,9 +522,9 @@ a.nav-contact-btn,
 }
 
 .nav-contact-btn:hover {
-    background: var(--dark-yellow) !important;
-    color: var(--white) !important;
-    border-color: var(--dark-yellow);
+    background: var(--signal);
+    color: var(--ink) !important;
+    border-color: var(--ink);
     transform: translateY(-1px);
     box-shadow: var(--box-shadow);
 }
@@ -545,8 +536,8 @@ a.nav-contact-btn,
 
 .nav-contact-btn.active {
     background: var(--white);
-    color: var(--primary-yellow);
-    border-color: var(--primary-yellow);
+    color: var(--signal);
+    border-color: var(--signal);
 }
 
 /* Navigation Links */
@@ -628,8 +619,8 @@ a.nav-contact-btn,
 
 /* Hero Section */
 .hero {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     padding: var(--s-5xl) 0 var(--s-4xl) 0;
     position: relative;
     overflow: hidden;
@@ -644,7 +635,7 @@ a.nav-contact-btn,
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    background: var(--ink);
     opacity: 0.9;
 }
 
@@ -708,7 +699,7 @@ a.nav-contact-btn,
 
 .hero-emphasis {
     display: block;
-    color: var(--primary-yellow);
+    color: var(--signal);
     font-weight: 900;
 }
 
@@ -733,9 +724,9 @@ a.nav-contact-btn,
     justify-content: center;
     width: 24px;
     height: 24px;
-    background: var(--primary-yellow);
+    background: var(--signal);
     border-radius: 50%;
-    color: var(--white);
+    color: var(--ink);
     font-size: 14px;
     font-weight: 700;
     flex-shrink: 0;
@@ -810,7 +801,7 @@ a.nav-contact-btn,
 }
 
 .btn-hero-secondary:hover {
-    background: var(--primary-blue);
+    background: var(--signal);
     transform: translateY(-2px);
 }
 
@@ -830,7 +821,7 @@ a.nav-contact-btn,
 }
 
 .hero-cta .btn-primary:hover {
-    background: var(--primary-blue);
+    background: var(--ink);
     transform: translateY(-2px);
     box-shadow: none;
 }
@@ -895,8 +886,8 @@ a.nav-contact-btn,
 }
 
 .highlight {
-    color: var(--primary-yellow);
-    background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+    color: var(--ink);
+    background: var(--signal);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -924,7 +915,7 @@ a.nav-contact-btn,
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-yellow);
+    color: var(--bone);
     font-family: var(--font-heading);
 }
 
@@ -963,7 +954,7 @@ section {
 
 /* Services Section */
 .services {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-yellow) 100%);
+    background: var(--ink);
     position: relative;
     padding: var(--section-padding);
 }
@@ -1021,7 +1012,7 @@ section {
     height: 60px;
     display: block;
     position: relative;
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    background: var(--signal);
     border-radius: 50%;
     flex-shrink: 0;
     order: 2;
@@ -1161,7 +1152,7 @@ section {
 }
 
 .industry-card h3 a:hover {
-    color: var(--primary-blue);
+    color: var(--bone);
 }
 
 .industry-card p {
@@ -1176,7 +1167,7 @@ section {
     margin: 0 auto 1.5rem;
     display: block;
     position: relative;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+    background: var(--signal);
     border-radius: 20px;
 }
 
@@ -1244,8 +1235,8 @@ section {
 }
 
 .keyword {
-    background: var(--primary-yellow);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     padding: 0.2rem 0.6rem;
     border-radius: 15px;
     font-size: 0.75rem;
@@ -1263,13 +1254,6 @@ section {
     gap: 3rem;
 }
 
-.case-study {
-    background: var(--bg-light);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--primary-blue);
-}
-
 .case-study-header {
     display: flex;
     justify-content: space-between;
@@ -1278,8 +1262,8 @@ section {
 }
 
 .case-study-industry {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1300,7 +1284,7 @@ section {
     display: block;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--bone);
     font-family: var(--font-heading);
 }
 
@@ -1312,7 +1296,7 @@ section {
 .case-study-description {
     font-style: italic;
     color: var(--text-dark);
-    border-left: 3px solid var(--primary-blue);
+    border-left: 3px solid var(--signal);
     padding-left: 1rem;
 }
 
@@ -1373,7 +1357,7 @@ section {
     padding: 2rem;
     border-radius: var(--border-radius);
     text-align: center;
-    border: 2px solid var(--primary-yellow);
+    border: 2px solid var(--signal);
     transition: var(--transition);
 }
 
@@ -1383,7 +1367,7 @@ section {
 }
 
 .guarantee-card h3 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -1407,7 +1391,7 @@ section {
 .feature-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+    background: var(--signal);
     border-radius: 12px;
     position: relative;
     flex-shrink: 0;
@@ -1470,7 +1454,7 @@ section {
 .stat-card .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--bone);
     font-family: var(--font-heading);
     display: block;
 }
@@ -1512,7 +1496,7 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--primary-yellow);
+    background: var(--signal);
     border-radius: 50%;
     flex-shrink: 0;
     position: relative;
@@ -1539,7 +1523,7 @@ section {
 }
 
 .contact-details a {
-    color: var(--primary-blue);
+    color: var(--signal);
     text-decoration: none;
 }
 
@@ -1575,7 +1559,7 @@ section {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    border-color: var(--signal);
     box-shadow: 0 0 0 3px rgba(0, 75, 173, 0.1);
 }
 
@@ -1655,9 +1639,9 @@ section {
 
 .blog-articles .article-date,
 .articles-grid .article-date {
-    color: var(--primary-yellow) !important;
+    color: var(--ink) !important;
     font-weight: 500;
-    background: var(--primary-blue) !important;
+    background: var(--signal);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -1665,8 +1649,8 @@ section {
 
 .blog-articles .article-category,
 .articles-grid .article-category {
-    background: var(--primary-yellow) !important;
-    color: var(--primary-blue) !important;
+    background: var(--signal);
+    color: var(--ink) !important;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-weight: 500;
@@ -1681,14 +1665,14 @@ section {
 
 .blog-articles .article-card h2 a,
 .articles-grid .article-card h2 a {
-    color: var(--primary-blue) !important;
+    color: var(--bone) !important;
     text-decoration: none !important;
     transition: color 0.3s ease;
 }
 
 .blog-articles .article-card h2 a:hover,
 .articles-grid .article-card h2 a:hover {
-    color: var(--light-blue) !important;
+    color: var(--bone) !important;
 }
 
 .blog-articles .article-card p,
@@ -1707,8 +1691,8 @@ section {
 }
 
 .read-more-btn {
-    background: var(--primary-blue);
-    color: white;
+    background: var(--signal);
+    color: var(--ink);
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
@@ -1717,7 +1701,7 @@ section {
 }
 
 .read-more-btn:hover {
-    background: var(--light-blue);
+    background: var(--signal);
 }
 
 .blog-articles .read-time,
@@ -1734,8 +1718,8 @@ section {
 
 /* Newsletter Signup */
 .newsletter-signup {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
-    color: white;
+    background: var(--ink);
+    color: var(--bone);
     padding: 4rem 0;
 }
 
@@ -1781,8 +1765,8 @@ section {
 }
 
 .newsletter-btn {
-    background: var(--primary-yellow);
-    color: var(--primary-blue);
+    background: var(--signal);
+    color: var(--ink);
     border: none;
     padding: 1rem 2rem;
     border-radius: 25px;
@@ -2058,8 +2042,8 @@ html {
 
 /* Contact Page Styles */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     padding: 150px 0 80px;
     text-align: center;
 }
@@ -2123,7 +2107,7 @@ html {
 .contact-option-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    background: var(--signal);
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     position: relative;
@@ -2200,7 +2184,7 @@ html {
 .agenda-icon {
     width: 40px;
     height: 40px;
-    background: var(--primary-yellow);
+    background: var(--signal);
     border-radius: 50%;
     position: relative;
     flex-shrink: 0;
@@ -2241,7 +2225,7 @@ html {
 }
 
 .contact-details a {
-    color: var(--primary-blue);
+    color: var(--signal);
     text-decoration: none;
 }
 
@@ -2287,7 +2271,7 @@ html {
 .benefit-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+    background: var(--signal);
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     position: relative;
@@ -2362,7 +2346,7 @@ html {
 .process-step-number {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--primary-yellow);
+    color: var(--signal);
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -2393,7 +2377,7 @@ html {
     background: var(--bg-light);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--primary-blue);
+    border-left: 4px solid var(--signal);
 }
 
 .faq-item h3 {
@@ -2442,8 +2426,8 @@ body[data-page="seo-plumber"] .hero {
 
 /* Local Keyword Tool Styles */
 .tool-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     text-align: center;
     padding: var(--s-5xl) 0 var(--s-4xl) 0;
 }
@@ -2507,7 +2491,7 @@ body[data-page="seo-plumber"] .hero {
 
 .tool-input:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    border-color: var(--signal);
     box-shadow: 0 0 0 3px rgba(0, 75, 173, 0.1);
 }
 
@@ -2573,8 +2557,8 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .keyword-item:hover {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     transform: translateY(-1px);
 }
 
@@ -2610,8 +2594,8 @@ body[data-page="seo-plumber"] .hero {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     border-radius: 50%;
     font-size: var(--text-2xl);
     font-weight: 700;
@@ -2663,7 +2647,7 @@ body[data-page="seo-plumber"] .hero {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+    background: var(--signal);
     border-radius: 50%;
     flex-shrink: 0;
     margin-right: var(--s-sm);
@@ -2696,7 +2680,7 @@ body[data-page="seo-plumber"] .hero {
     content: '';
     width: 6px;
     height: 6px;
-    background: var(--primary-yellow);
+    background: var(--signal);
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -2767,8 +2751,8 @@ body[data-page="seo-plumber"] .hero {
 
 .tool-cta {
     padding: var(--s-4xl) 0;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     text-align: center;
 }
 
@@ -2846,7 +2830,7 @@ body[data-page="seo-plumber"] .hero {
 .sitemap-content h1 {
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--primary-blue);
+    color: var(--bone);
 }
 
 .sitemap-content > p {
@@ -2872,10 +2856,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .sitemap-category h2 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    border-bottom: 2px solid var(--primary-yellow);
+    border-bottom: 2px solid var(--signal);
     padding-bottom: 0.5rem;
 }
 
@@ -2898,7 +2882,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .sitemap-list a:hover {
-    color: var(--primary-blue);
+    color: var(--signal);
     padding-left: 0.5rem;
 }
 
@@ -2906,11 +2890,11 @@ body[data-page="seo-plumber"] .hero {
     background: var(--bg-light);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--primary-blue);
+    border-left: 4px solid var(--signal);
 }
 
 .sitemap-info h2, .sitemap-info h3 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: 1rem;
 }
 
@@ -2925,7 +2909,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .sitemap-info a {
-    color: var(--primary-blue);
+    color: var(--signal);
     text-decoration: none;
 }
 
@@ -2973,7 +2957,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .founder-credentials p {
-    color: var(--primary-blue);
+    color: var(--bone);
     font-weight: 500;
     font-size: 1.1rem;
 }
@@ -2996,7 +2980,7 @@ body[data-page="seo-plumber"] .hero {
 .founder-bio blockquote {
     background: var(--bg-section);
     padding: var(--s-lg);
-    border-left: 4px solid var(--primary-yellow);
+    border-left: 4px solid var(--signal);
     margin: var(--s-xl) 0;
     font-style: italic;
     font-size: 1.1rem;
@@ -3069,12 +3053,12 @@ body[data-page="seo-plumber"] .hero {
     width: 60px;
     height: 60px;
     margin: 0 auto var(--s-lg);
-    background: var(--primary-blue);
+    background: var(--signal);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--ink);
     font-size: 1.5rem;
 }
 
@@ -3136,7 +3120,7 @@ body[data-page="seo-plumber"] .hero {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--primary-blue);
+    color: var(--signal);
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -3163,7 +3147,7 @@ body[data-page="seo-plumber"] .hero {
     padding: var(--s-xl);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--primary-yellow);
+    border-top: 4px solid var(--signal);
 }
 
 .value-item h3 {
@@ -3180,8 +3164,8 @@ body[data-page="seo-plumber"] .hero {
 
 .about-cta {
     padding: var(--s-4xl) 0;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     text-align: center;
 }
 
@@ -3210,24 +3194,24 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .cta-buttons .btn-primary {
-    background: var(--primary-yellow);
+    background: var(--signal);
     color: var(--text-dark);
 }
 
 .cta-buttons .btn-primary:hover {
-    background: var(--dark-yellow);
+    background: var(--signal);
 }
 
 .cta-buttons .btn-secondary {
-    background: var(--primary-yellow);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     border: none;
     border-radius: 50px;
 }
 
 .cta-buttons .btn-secondary:hover {
     background: var(--white);
-    color: var(--primary-blue);
+    color: var(--signal);
 }
 
 /* Mobile Responsiveness for About Page */
@@ -3320,7 +3304,7 @@ body[data-page="seo-plumber"] .hero {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: var(--primary-blue);
+    background: var(--signal);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3429,8 +3413,8 @@ body[data-page="seo-plumber"] .hero {
 .step-number {
     width: 60px;
     height: 60px;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3480,7 +3464,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .pricing-card.featured {
-    border: 2px solid var(--primary-blue);
+    border: 2px solid var(--signal);
     transform: scale(1.05);
 }
 
@@ -3493,8 +3477,8 @@ body[data-page="seo-plumber"] .hero {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--signal);
+    color: var(--ink);
     padding: var(--s-xs) var(--s-md);
     font-size: 0.8rem;
     font-weight: 600;
@@ -3528,7 +3512,7 @@ body[data-page="seo-plumber"] .hero {
 .amount {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--bone);
     margin: 0 var(--s-xs);
 }
 
@@ -3588,7 +3572,7 @@ body[data-page="seo-plumber"] .hero {
     border-radius: 12px;
     text-align: center;
     margin-top: var(--s-3xl);
-    border-left: 4px solid var(--primary-yellow);
+    border-left: 4px solid var(--signal);
 }
 
 .pricing-guarantee h3 {
@@ -3606,8 +3590,8 @@ body[data-page="seo-plumber"] .hero {
 /* Services CTA */
 .services-cta {
     padding: var(--s-4xl) 0;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     text-align: center;
 }
 
@@ -3636,24 +3620,24 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .services-cta .btn-primary {
-    background: var(--primary-yellow);
+    background: var(--ink);
     color: var(--text-dark);
 }
 
 .services-cta .btn-primary:hover {
-    background: var(--dark-yellow);
+    background: var(--ink);
 }
 
 .services-cta .btn-secondary {
-    background: var(--primary-yellow);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     border: none;
     border-radius: 50px;
 }
 
 .services-cta .btn-secondary:hover {
     background: var(--white);
-    color: var(--primary-blue);
+    color: var(--signal);
 }
 
 /* Mobile Responsiveness for Services Page */
@@ -3835,7 +3819,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .analysis-card h4 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-md);
 }
 
@@ -3878,7 +3862,7 @@ body[data-page="seo-plumber"] .hero {
 
 .recommendation {
     background: var(--white);
-    border-left: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--signal);
     padding: var(--s-sm) var(--s-md);
     margin-bottom: var(--s-sm);
     border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
@@ -3886,8 +3870,8 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .overall-score {
-    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     border-radius: var(--border-radius);
     padding: var(--s-2xl);
     text-align: center;
@@ -3906,7 +3890,7 @@ body[data-page="seo-plumber"] .hero {
 
 .score-display.excellent .score-number { color: var(--success-green); }
 .score-display.good .score-number { color: #2ecc71; }
-.score-display.moderate .score-number { color: var(--primary-yellow); }
+.score-display.moderate .score-number { color: var(--bone); }
 .score-display.poor .score-number { color: var(--warning-orange); }
 .score-display.critical .score-number { color: #e74c3c; }
 
@@ -3940,7 +3924,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .opening-hours-section h3 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-lg);
 }
 
@@ -4016,7 +4000,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .implementation-guide h4 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-md);
 }
 
@@ -4074,7 +4058,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .checklist-section h4 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -4100,7 +4084,7 @@ body[data-page="seo-plumber"] .hero {
 
 .checklist-item:hover {
     background: #e8f4f8;
-    border-color: var(--primary-blue);
+    border-color: var(--signal);
 }
 
 .checklist-item input[type="checkbox"] {
@@ -4108,7 +4092,7 @@ body[data-page="seo-plumber"] .hero {
     flex-shrink: 0;
     width: 18px;
     height: 18px;
-    accent-color: var(--primary-blue);
+    accent-color: var(--signal);
 }
 
 .checklist-item span {
@@ -4123,7 +4107,7 @@ body[data-page="seo-plumber"] .hero {
     padding: var(--s-2xl);
     background: var(--bg-light);
     border-radius: var(--border-radius);
-    border-top: 4px solid var(--primary-blue);
+    border-top: 4px solid var(--signal);
 }
 
 .score-summary {
@@ -4187,7 +4171,7 @@ body[data-page="seo-plumber"] .hero {
 
 .score-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+    background: var(--signal);
     transition: width 0.5s ease;
 }
 
@@ -4203,7 +4187,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .recommendations-section h3 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-lg);
 }
 
@@ -4217,12 +4201,12 @@ body[data-page="seo-plumber"] .hero {
     margin-bottom: var(--s-sm);
     background: var(--bg-light);
     border-radius: var(--border-radius-sm);
-    border-left: 4px solid var(--primary-yellow);
+    border-left: 4px solid var(--signal);
 }
 
 .recommendation-category {
     font-weight: 600;
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-right: var(--s-xs);
 }
 
@@ -4258,7 +4242,7 @@ body[data-page="seo-plumber"] .hero {
 
 .quick-reference-card h2 {
     text-align: center;
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-2xl);
     font-size: 1.8rem;
 }
@@ -4297,7 +4281,7 @@ body[data-page="seo-plumber"] .hero {
     display: block;
     font-size: 1.4rem;
     font-weight: bold;
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-xs);
 }
 
@@ -4319,7 +4303,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .detailed-specs h2 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-2xl);
     font-size: 1.8rem;
 }
@@ -4391,11 +4375,11 @@ body[data-page="seo-plumber"] .hero {
     background: var(--bg-section);
     padding: var(--s-lg);
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--primary-yellow);
+    border-left: 4px solid var(--signal);
 }
 
 .spec-tips h4 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-md);
 }
 
@@ -4427,7 +4411,7 @@ body[data-page="seo-plumber"] .hero {
 
 .photo-categories h4,
 .post-types h4 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-lg);
 }
 
@@ -4466,7 +4450,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .technical-requirements h2 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-2xl);
     font-size: 1.8rem;
 }
@@ -4482,7 +4466,7 @@ body[data-page="seo-plumber"] .hero {
     padding: var(--s-xl);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border-top: 4px solid var(--primary-blue);
+    border-top: 4px solid var(--signal);
 }
 
 .requirement-card h3 {
@@ -4509,7 +4493,7 @@ body[data-page="seo-plumber"] .hero {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--primary-blue);
+    color: var(--signal);
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -4519,7 +4503,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .optimization-tips h2 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-2xl);
     font-size: 1.8rem;
 }
@@ -4560,7 +4544,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .common-mistakes h2 {
-    color: var(--primary-blue);
+    color: var(--bone);
     margin-bottom: var(--s-2xl);
     font-size: 1.8rem;
 }
@@ -4600,8 +4584,8 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .guide-cta {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--ink);
+    color: var(--bone);
     padding: var(--s-3xl);
     border-radius: var(--border-radius);
     text-align: center;
@@ -4630,7 +4614,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .cta-buttons .btn-primary {
-    background: var(--primary-yellow);
+    background: var(--signal);
     color: var(--text-dark);
 }
 
@@ -4642,7 +4626,7 @@ body[data-page="seo-plumber"] .hero {
 
 .cta-buttons .btn-secondary:hover {
     background: var(--white);
-    color: var(--primary-blue);
+    color: var(--signal);
 }
 
 /* Mobile Responsiveness for Image Guide */
@@ -4743,7 +4727,7 @@ body[data-page="seo-plumber"] .hero {
 
 .feature-list li h4 {
     margin-bottom: 0.5rem;
-    color: var(--primary-blue);
+    color: var(--bone);
 }
 
 .feature-list li p {
@@ -5591,4 +5575,41 @@ body.page-dark .sitemap-info {
 
 body.page-dark .sitemap-category h2 {
     border-bottom-color: var(--ink-border);
+}
+
+/* ===================================================================
+   WELTO Rebrand 2026 - Phase 9: remaining legacy surfaces
+   These containers are divs, so `body.page-dark section` never caught
+   them and they kept painting a light card on a dark page.
+   =================================================================== */
+body.page-dark .contact-form-container,
+body.page-dark .calendly-section,
+body.page-dark .calendly-container,
+body.page-dark .faq-section,
+body.page-dark .analysis-card,
+body.page-dark .implementation-guide,
+body.page-dark .score-summary,
+body.page-dark .spec-tips,
+body.page-dark .solution,
+body.page-dark .day-hours,
+body.page-dark .code-header,
+body.page-dark .code-block,
+body.page-dark .serp-preview,
+body.page-dark .checklist-item,
+body.page-dark .founder-bio blockquote {
+    background: var(--ink-elevated);
+    border-color: var(--ink-border);
+    color: var(--bone-muted);
+    box-shadow: none;
+}
+
+body.page-dark .checklist-item:hover {
+    background: var(--ink);
+    border-color: var(--signal);
+}
+
+body.page-dark .nav-contact-btn.active {
+    background: var(--signal);
+    color: var(--ink);
+    border-color: var(--signal);
 }
