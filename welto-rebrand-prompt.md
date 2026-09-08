@@ -82,10 +82,7 @@ Replace the entire current hero. The new hero is on `--ink` background.
 
 **CTAs:** One primary button "Get your free audit →". Next to it, a small line of text: "or [see what local SEO growth looks like]" where the bracketed text is a tertiary link to the results section.
 
-**Proof bar below CTAs** (separated by a hairline top border, 28px padding-top): three inline items in `--mute` colour:
-- "**120+** trades businesses" (the number in `--bone` weight 500)
-- "**£2M+** attributed revenue"
-- "**Gas Safe**, NICEIC partners"
+**No proof bar under the CTAs.** The old "120+ trades businesses / £2M+ attributed revenue / Gas Safe, NICEIC partners" strip has been removed sitewide — none of those claims are substantiated. Do not reinstate it or invent a replacement.
 
 **Remove entirely:**
 - The tick-mark bullet list ("Get More Emergency Calls" etc.)
@@ -162,7 +159,7 @@ Three short blocks (no cards, just type), each with a bold lead line and a short
 
 3. **Real numbers, not vanity metrics.** Monthly reports show leads, calls and attributed revenue — not just rankings and traffic.
 
-**Delete the stat block** (5+ Years / 120+ Projects / £2M+ / 95%). These numbers now live in the proof bar under the hero and in the case study. Repeating them dilutes them.
+**Delete the stat block** (5+ Years / 120+ Projects / £2M+ / 95%). These numbers are unsubstantiated and have been removed sitewide — do not relocate them.
 
 **Stop here and summarise.**
 

@@ -4891,25 +4891,6 @@ body[data-page="seo-plumber"] .hero {
     color: var(--mute);
 }
 
-.hero-proof {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 28px;
-    margin-top: 28px;
-    padding-top: 28px;
-    border-top: 1px solid var(--ink-border);
-}
-
-.proof-item {
-    font-size: 14px;
-    color: var(--mute);
-}
-
-.proof-figure {
-    color: var(--bone);
-    font-weight: 500;
-}
-
 @media (max-width: 767px) {
     .hero-home {
         padding: 116px 0 56px;
@@ -5027,12 +5008,6 @@ body[data-page="seo-plumber"] .hero {
     height: auto;
     border: 1px solid var(--ink-border);
     border-radius: 8px;
-}
-
-.case-figure-img figcaption {
-    margin-top: 12px;
-    font-size: 13px;
-    color: var(--mute);
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
