@@ -7,7 +7,7 @@
 
 :root {
     /* ===================================================================
-       WELTO Rebrand 2026 — Brand foundations
+       WELTO Rebrand 2026 - Brand foundations
        Use these tokens everywhere. No raw hex values in component code.
        =================================================================== */
     --ink: #0A0A0A;            /* Primary dark surface */
@@ -16,7 +16,7 @@
     --bone: #F5F4F0;           /* Light surface, body text on ink */
     --bone-muted: #C8C7C0;     /* Body text on dark backgrounds */
     --mute: #888780;           /* Secondary/tertiary text */
-    --signal: #E8FF4D;         /* Accent — CTAs, highlights, logo dot */
+    --signal: #E8FF4D;         /* Accent - CTAs, highlights, logo dot */
 
     /* Section rhythm (8px base grid) */
     --section-pad-desktop: 96px;
@@ -24,7 +24,7 @@
     --section-pad-mobile: 48px;
     --container-gutter: 32px;
 
-    /* Legacy brand colours — retained for pages not yet rebranded.
+    /* Legacy brand colours - retained for pages not yet rebranded.
        To be removed in Phase 9 once all pages use the tokens above. */
     --primary-blue: #004bad;
     --light-blue: #0066cc;
@@ -104,7 +104,7 @@ body {
     padding: 0 var(--container-gutter);
 }
 
-/* Typography System — WELTO Rebrand 2026 type scale (Inter 400/500 only) */
+/* Typography System - WELTO Rebrand 2026 type scale (Inter 400/500 only) */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 500;
@@ -181,7 +181,7 @@ p {
 .text-muted { color: var(--text-muted); }
 
 /* ===================================================================
-   Button System — WELTO Rebrand 2026
+   Button System - WELTO Rebrand 2026
    .btn-primary   Signal yellow bg, ink text, trailing arrow. One per screen.
    .btn-secondary Transparent, bone text, hairline border. No arrow.
    .btn-tertiary  Inline link, bone text, Signal underline.
@@ -235,7 +235,7 @@ p {
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* Tertiary — inline text link with a thin Signal underline */
+/* Tertiary - inline text link with a thin Signal underline */
 .btn-tertiary {
     display: inline;
     color: var(--bone);
@@ -424,7 +424,7 @@ p {
 
 /* Responsive Design System */
 @media (max-width: 1024px) and (min-width: 768px) {
-    /* Tablet — section rhythm */
+    /* Tablet - section rhythm */
     .section { padding: var(--section-pad-tablet) 0; }
 }
 
@@ -453,7 +453,7 @@ p {
 }
 
 /* ===================================================================
-   Header — WELTO Rebrand 2026 (dark surface, hairline border)
+   Header - WELTO Rebrand 2026 (dark surface, hairline border)
    =================================================================== */
 .header {
     background: var(--ink);
@@ -476,7 +476,7 @@ p {
     gap: var(--s-xl);
 }
 
-/* Legacy <img> logo — kept for pages not yet rebranded (Phase 9) */
+/* Legacy <img> logo - kept for pages not yet rebranded (Phase 9) */
 .logo {
     height: 40px;
     width: auto;
@@ -579,7 +579,7 @@ a.nav-contact-btn,
     transition: all 0.2s ease;
 }
 
-/* Mobile nav — dark dropdown panel */
+/* Mobile nav - dark dropdown panel */
 @media (max-width: 767px) {
     .nav-menu {
         display: none;
@@ -1803,7 +1803,7 @@ section {
 }
 
 /* Footer */
-/* Footer — WELTO Rebrand 2026 */
+/* Footer - WELTO Rebrand 2026 */
 .footer {
     background: var(--ink);
     color: var(--bone-muted);
@@ -4752,7 +4752,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Shared components
+   WELTO Rebrand 2026 - Shared components
    Wordmark, eyebrow, section heading/lead pattern.
    =================================================================== */
 
@@ -4766,7 +4766,7 @@ body[data-page="seo-plumber"] .hero {
     letter-spacing: -0.04em;
     line-height: 1;
     text-decoration: none;
-    color: var(--bone);            /* dark-mode (on ink) — default */
+    color: var(--bone);            /* dark-mode (on ink) - default */
 }
 
 .wordmark--on-bone {
@@ -4816,7 +4816,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 2: Homepage hero
+   WELTO Rebrand 2026 - Phase 2: Homepage hero
    =================================================================== */
 .hero-home {
     background: var(--ink);
@@ -4886,7 +4886,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 3: Services section
+   WELTO Rebrand 2026 - Phase 3: Services section
    =================================================================== */
 .services-home {
     background: var(--ink);
@@ -4959,7 +4959,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 4: Results example
+   WELTO Rebrand 2026 - Phase 4: Results example
    =================================================================== */
 .case-study {
     background: var(--ink);
@@ -4999,7 +4999,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 5: Industries section
+   WELTO Rebrand 2026 - Phase 5: Industries section
    =================================================================== */
 .industries-home {
     background: var(--ink);
@@ -5074,7 +5074,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 6: Why WELTO section
+   WELTO Rebrand 2026 - Phase 6: Why WELTO section
    =================================================================== */
 .why-welto {
     background: var(--ink);
@@ -5122,7 +5122,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 7: Final CTA section
+   WELTO Rebrand 2026 - Phase 7: Final CTA section
    =================================================================== */
 .final-cta {
     background: var(--ink);
@@ -5179,7 +5179,7 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 9: cascade to inner pages
+   WELTO Rebrand 2026 - Phase 9: cascade to inner pages
    Recolours the legacy page templates to the dark system.
    Applied via <body class="page-dark">.
    =================================================================== */
@@ -5272,7 +5272,7 @@ body.page-dark .email-note {
     color: var(--mute);
 }
 
-/* Buttons — beat legacy contextual overrides */
+/* Buttons - beat legacy contextual overrides */
 body.page-dark .btn-primary {
     background: var(--signal);
     color: var(--ink);
@@ -5304,7 +5304,7 @@ body.page-dark .btn-secondary:hover {
     border-color: var(--mute);
 }
 
-/* Phase 9 — fixes for legacy page quirks */
+/* Phase 9 - fixes for legacy page quirks */
 body.page-dark .page-header-content {
     max-width: 760px;
     margin: 0;
@@ -5332,7 +5332,7 @@ body.page-dark .agenda-item {
     gap: 8px;
 }
 
-/* Phase 9 — trade page components (hero, services, process, contact) */
+/* Phase 9 - trade page components (hero, services, process, contact) */
 body.page-dark .hero {
     color: var(--bone);
 }
@@ -5390,7 +5390,7 @@ body.page-dark .feature h4 {
     color: var(--bone);
 }
 
-/* Phase 9 — city/county "areas served" section */
+/* Phase 9 - city/county "areas served" section */
 body.page-dark .industry-card {
     background: var(--ink-elevated);
     border: 1px solid var(--ink-border);
@@ -5413,7 +5413,7 @@ body.page-dark .industry-keywords .keyword {
     color: var(--mute);
 }
 
-/* Phase 9 — tool pages (forms, tool UI, JS-generated results) */
+/* Phase 9 - tool pages (forms, tool UI, JS-generated results) */
 body.page-dark label {
     color: var(--bone-muted);
     font-weight: 500;
@@ -5478,7 +5478,7 @@ body.page-dark .category-score-header {
     color: var(--bone-muted);
 }
 
-/* Phase 9 — image size guide unique components (recolour to dark) */
+/* Phase 9 - image size guide unique components (recolour to dark) */
 body.page-dark .quick-reference-card,
 body.page-dark .spec-section,
 body.page-dark .technical-requirements,
@@ -5508,7 +5508,7 @@ body.page-dark .spec-details { color: var(--bone-muted); }
 body.page-dark .size-main { color: var(--bone); }
 
 /* ===================================================================
-   WELTO Rebrand 2026 — Phase 9: blog dark theme (overrides blog.css)
+   WELTO Rebrand 2026 - Phase 9: blog dark theme (overrides blog.css)
    =================================================================== */
 body.page-dark .blog-header {
     background: var(--ink) !important;
@@ -5581,7 +5581,7 @@ body.page-dark .guarantee-card {
     box-shadow: none;
 }
 
-/* Phase 9 — sitemap page */
+/* Phase 9 - sitemap page */
 body.page-dark .sitemap-category,
 body.page-dark .sitemap-info {
     background: var(--ink-elevated);

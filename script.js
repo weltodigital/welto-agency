@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Header scroll effect — subtle elevation on the dark header
+// Header scroll effect - subtle elevation on the dark header
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (header) {
