@@ -18,10 +18,31 @@
     --mute: #888780;           /* Secondary/tertiary text */
     --signal: #E8FF4D;         /* Accent - CTAs, highlights, logo dot */
 
+    /* Bone alpha ladder - layered surfaces and text tiers on ink.
+       Surfaces are tinted bone rather than separate greys, so every
+       panel sits in the same light and stacking stays predictable. */
+    --bone-02: rgba(245, 244, 240, 0.02);
+    --bone-04: rgba(245, 244, 240, 0.04);
+    --bone-06: rgba(245, 244, 240, 0.06);
+    --bone-10: rgba(245, 244, 240, 0.10);
+    --bone-14: rgba(245, 244, 240, 0.14);
+    --bone-25: rgba(245, 244, 240, 0.25);
+    --bone-35: rgba(245, 244, 240, 0.35);
+    --bone-40: rgba(245, 244, 240, 0.40);
+    --bone-70: rgba(245, 244, 240, 0.70);
+
+    /* Hairline borders read as drawn lines, not box edges */
+    --hairline: var(--bone-14);
+    --hairline-dim: var(--bone-10);
+
+    /* Cut corner - top-left and bottom-right, applied with clip-path */
+    --chamfer: 14px;
+    --ease: cubic-bezier(0.25, 1, 0.5, 1);
+
     /* Section rhythm (8px base grid) */
-    --section-pad-desktop: 96px;
-    --section-pad-tablet: 64px;
-    --section-pad-mobile: 48px;
+    --section-pad-desktop: 128px;
+    --section-pad-tablet: 80px;
+    --section-pad-mobile: 56px;
     --container-gutter: 32px;
 
     /* Text Colors */
@@ -41,9 +62,11 @@
     --success-green: #27ae60;
     --warning-orange: #f39c12;
 
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Typography - Instrument Sans for display and body, Chivo Mono for
+       labels, buttons and small UI text. */
+    --font-primary: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Chivo Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
     /* Spacing System (inspired by WebFX) */
     --s-xs: 0.25rem;   /* 4px */
@@ -106,20 +129,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 52px;
-    line-height: 1.02;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    line-height: 0.94;
+    letter-spacing: -0.04em;
 }
 
 h2 {
-    font-size: 36px;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
 }
 
 h3 {
-    font-size: 24px;
-    line-height: 1.25;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.2;
     letter-spacing: -0.02em;
 }
 
@@ -181,19 +204,23 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 14px 22px;
+    gap: 10px;
+    padding: 16px 28px;
     border: 1px solid transparent;
-    border-radius: 6px;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 500;
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     line-height: 1;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+    transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
     outline: none;
+    /* cut top-left and bottom-right */
+    clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
 }
 
 .btn-primary {
@@ -212,9 +239,9 @@ p {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--bone-04);
     color: var(--bone);
-    border-color: var(--ink-border);
+    border-color: var(--hairline);
 }
 
 .btn-secondary:hover {
@@ -737,7 +764,10 @@ a.nav-contact-btn,
 }
 
 .feature-icon::before {
-    content: '✓';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -755,9 +785,9 @@ a.nav-contact-btn,
     padding: var(--s-2xl);
     border-radius: 24px;
     box-shadow:
-        0 20px 60px rgba(0, 75, 173, 0.08),
-        0 8px 32px rgba(0, 75, 173, 0.06),
-        0 1px 4px rgba(0, 75, 173, 0.04);
+        0 20px 60px rgba(245, 244, 240, 0.08),
+        0 8px 32px rgba(245, 244, 240, 0.06),
+        0 1px 4px rgba(245, 244, 240, 0.04);
     color: var(--text-dark);
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -768,9 +798,9 @@ a.nav-contact-btn,
 .hero-card:hover {
     transform: translateY(-4px);
     box-shadow:
-        0 32px 80px rgba(0, 75, 173, 0.12),
-        0 12px 48px rgba(0, 75, 173, 0.08),
-        0 2px 8px rgba(0, 75, 173, 0.06);
+        0 32px 80px rgba(245, 244, 240, 0.12),
+        0 12px 48px rgba(245, 244, 240, 0.08),
+        0 2px 8px rgba(245, 244, 240, 0.06);
 }
 
 .hero-card h3 {
@@ -966,7 +996,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.15);
+    background: transparent;
     z-index: 1;
 }
 
@@ -1087,7 +1117,10 @@ section {
 }
 
 .service-features li::before {
-    content: "✓";
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--mute);
@@ -1096,11 +1129,7 @@ section {
 
 /* Industries Section */
 .industries {
-    background: var(--bg-light);
-    background-image: url('./Welto More Leads .png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--ink);
     position: relative;
 }
 
@@ -1111,7 +1140,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(248, 249, 250, 0.7);
+    background: transparent;
     z-index: 1;
 }
 
@@ -1560,7 +1589,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--signal);
-    box-shadow: 0 0 0 3px rgba(0, 75, 173, 0.1);
+    box-shadow: 0 0 0 3px rgba(245, 244, 240, 0.1);
 }
 
 .form-group textarea {
@@ -1609,7 +1638,7 @@ section {
 .article-card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 75, 173, 0.1);
+    box-shadow: 0 4px 20px rgba(245, 244, 240, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid #e9ecef;
@@ -1617,7 +1646,7 @@ section {
 
 .article-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 75, 173, 0.15);
+    box-shadow: 0 8px 30px rgba(245, 244, 240, 0.15);
 }
 
 .article-card.coming-soon {
@@ -2303,7 +2332,7 @@ html {
 
 /* Local Process Section */
 .local-process {
-    background: linear-gradient(rgba(33, 72, 155, 0.9), rgba(33, 72, 155, 0.9)), url('../Welto More Leads .png') center/cover no-repeat;
+    background: linear-gradient(rgba(10, 10, 10, 0.86), rgba(10, 10, 10, 0.86)), url('../Welto More Leads .png') center/cover no-repeat;
     color: var(--white);
     padding: var(--section-padding);
     position: relative;
@@ -2421,7 +2450,7 @@ html {
 
 /* Plumber SEO Page Background - Hero Section Only */
 body[data-page="seo-plumber"] .hero {
-    background: linear-gradient(rgba(33, 72, 155, 0.7), rgba(33, 72, 155, 0.7)), url('../plumber-seo.png') center/cover no-repeat !important;
+    background: linear-gradient(rgba(10, 10, 10, 0.86), rgba(10, 10, 10, 0.86)), url('../plumber-seo.png') center/cover no-repeat !important;
 }
 
 /* Local Keyword Tool Styles */
@@ -2492,7 +2521,7 @@ body[data-page="seo-plumber"] .hero {
 .tool-input:focus {
     outline: none;
     border-color: var(--signal);
-    box-shadow: 0 0 0 3px rgba(0, 75, 173, 0.1);
+    box-shadow: 0 0 0 3px rgba(245, 244, 240, 0.1);
 }
 
 .tool-generate-btn {
@@ -3015,7 +3044,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .achievements li:before {
-    content: '✓';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--success-green);
@@ -3117,7 +3149,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .story-text li:before {
-    content: '•';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--signal);
@@ -3382,7 +3417,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .service-features li:before {
-    content: '✓';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--mute);
@@ -3547,7 +3585,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .pricing-features li:before {
-    content: '✓';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--success-green);
@@ -4397,7 +4438,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .spec-tips li:before {
-    content: '✓';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--success-green);
@@ -4490,7 +4534,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .requirement-card li:before {
-    content: '•';
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--signal);
     position: absolute;
     left: 0;
     color: var(--signal);
@@ -4768,18 +4815,30 @@ body[data-page="seo-plumber"] .hero {
 }
 
 /* --- Section pattern ----------------------------------------------- */
-.eyebrow {
+.eyebrow,
+.mono-label,
+.section-label {
     display: block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--signal);
     margin-bottom: 16px;
 }
 
+/* Quieter variant for labels that sit inside a panel rather than
+   opening a section. */
+.mono-label--muted,
+.section-label--muted {
+    color: var(--bone-35);
+}
+
 .section-heading {
-    font-size: 36px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -4804,31 +4863,34 @@ body[data-page="seo-plumber"] .hero {
    =================================================================== */
 .hero-home {
     background: var(--ink);
-    padding: 168px 0 96px;          /* top clears the fixed header */
+    padding: 200px 0 128px;         /* top clears the fixed header */
+    border-bottom: 1px solid var(--hairline-dim);
 }
 
 .hero-home .hero-inner {
-    max-width: 780px;
+    max-width: 960px;
 }
 
 .hero-home .eyebrow {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .hero-home h1 {
-    font-size: 52px;
-    line-height: 1.02;
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    line-height: 0.94;
     font-weight: 500;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.04em;
     color: var(--bone);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .hero-highlight {
     background: var(--signal);
     color: var(--ink);
-    padding: 0 8px;
-    border-radius: 4px;
+    padding: 0 10px;
+    border-radius: 0;
+    /* No chamfer here: on an inline, wrapping element the cut lands
+       mid-word and reads as a rendering fault rather than a detail. */
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
@@ -4856,7 +4918,7 @@ body[data-page="seo-plumber"] .hero {
 
 @media (max-width: 767px) {
     .hero-home {
-        padding: 116px 0 56px;
+        padding: 132px 0 64px;
     }
 
     .hero-home h1 {
@@ -5612,4 +5674,218 @@ body.page-dark .nav-contact-btn.active {
     background: var(--signal);
     color: var(--ink);
     border-color: var(--signal);
+}
+
+/* ===================================================================
+   WELTO 2026 - chamfered panel
+   The cut corner and the tinted-bone surface are the two details that
+   carry the look, so they live in one place and every card opts in.
+   =================================================================== */
+.panel,
+body.page-dark .service-card,
+body.page-dark .process-step,
+body.page-dark .mission-item,
+body.page-dark .value-item,
+body.page-dark .contact-option,
+body.page-dark .benefit-item,
+body.page-dark .faq-item,
+body.page-dark .stat-card,
+body.page-dark .result-card,
+body.page-dark .size-card,
+body.page-dark .industry-card,
+body.page-dark .article-card,
+body.page-dark .tip-card,
+body.page-dark .mistake-item,
+body.page-dark .reference-item,
+body.page-dark .requirement-card,
+body.page-dark .quick-reference-card,
+body.page-dark .analysis-card,
+body.page-dark .contact-form-container,
+body.page-dark .calendly-section,
+body.page-dark .sitemap-category {
+    background: var(--bone-04);
+    border: 1px solid var(--hairline-dim);
+    border-radius: 0;
+    box-shadow: none;
+    clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
+    transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.panel:hover,
+body.page-dark .service-card:hover,
+body.page-dark .industry-card:hover,
+body.page-dark .article-card:hover,
+body.page-dark .tip-card:hover {
+    background: var(--bone-06);
+    border-color: var(--hairline);
+}
+
+/* Numbered step callouts - mono, hairline rule, no filled circle */
+body.page-dark .step-number,
+body.page-dark .process-step-number {
+    background: transparent;
+    color: var(--signal);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--hairline);
+    padding-top: 12px;
+    margin: 0 0 16px;
+    display: block;
+    text-align: left;
+}
+
+/* Section openers get a hairline rule above the label, so sections read
+   as ruled bands rather than floating blocks. */
+.hero-home + section > .container > .eyebrow,
+body.page-dark section > .container > .eyebrow,
+.case-study > .container > .eyebrow,
+.why-welto > .container > .eyebrow {
+    padding-top: 28px;
+    border-top: 1px solid var(--hairline-dim);
+}
+
+/* ===================================================================
+   WELTO 2026 - layout alignment
+   The reference design is left-aligned throughout: labels, headings,
+   intros and stats all hang off the same left edge. The legacy
+   templates centred most of this, which fought the display type.
+   =================================================================== */
+body.page-dark .hero {
+    min-height: 0;
+    padding: 180px 0 112px;
+    border-bottom: 1px solid var(--hairline-dim);
+}
+
+body.page-dark .hero-content,
+body.page-dark .section-header,
+body.page-dark .section-intro,
+body.page-dark .cta-content {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Constrain the heading, not the block - otherwise the intro
+   paragraph inherits the measure meant for display type. */
+body.page-dark .section-header h2,
+body.page-dark .section-header h1 {
+    max-width: 20ch;
+}
+
+body.page-dark .section-header p,
+body.page-dark .hero-subtitle {
+    max-width: 62ch;
+    margin-left: 0;
+}
+
+body.page-dark .hero-stats {
+    justify-content: flex-start;
+    max-width: 640px;
+    margin-left: 0;
+    gap: 0;
+    border-top: 1px solid var(--hairline-dim);
+    padding-top: 28px;
+}
+
+body.page-dark .hero-stats .stat {
+    text-align: left;
+    padding: 0 32px 0 0;
+}
+
+body.page-dark .hero-stats .stat-number {
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+body.page-dark .hero-stats .stat-text {
+    font-size: 0.8125rem;
+    color: var(--bone-40);
+}
+
+body.page-dark .hero-cta {
+    justify-content: flex-start;
+}
+
+/* Secondary button needs a visible edge: clip-path cuts the border at
+   the chamfer, so the fill has to carry the shape on its own. */
+body.page-dark .btn-secondary,
+.btn-secondary {
+    background: var(--bone-06);
+    color: var(--bone);
+    border-color: var(--hairline);
+}
+
+body.page-dark .btn-secondary:hover,
+.btn-secondary:hover {
+    background: var(--bone-12, rgba(245, 244, 240, 0.12));
+    color: var(--bone);
+}
+
+/* Everything hangs off the same left edge. The legacy templates centred
+   intros, cards and CTA blocks; centred text under a 5rem display face
+   reads as a different design language, so they all move left. */
+body.page-dark .contact-intro,
+body.page-dark .contact-option,
+body.page-dark .benefit-item,
+body.page-dark .scheduling-content,
+body.page-dark .benefits-content,
+body.page-dark .step-card,
+body.page-dark .mission-item,
+body.page-dark .value-item,
+body.page-dark .stat-card,
+body.page-dark .result,
+body.page-dark .results-showcase,
+body.page-dark .guarantee-card,
+body.page-dark .industry-card,
+body.page-dark .pricing-header,
+body.page-dark .page-header,
+body.page-dark .tool-header,
+body.page-dark .tool-cta,
+body.page-dark .about-cta,
+body.page-dark .services-cta,
+body.page-dark .local-process h2,
+body.page-dark .local-process .section-intro,
+body.page-dark .sitemap-content h1,
+body.page-dark .sitemap-content > p,
+body.page-dark .founder-content,
+body.page-dark .newsletter-content,
+body.page-dark .contact-form h3,
+body.page-dark .calendly-section h3,
+body.page-dark .pricing-features h4,
+body.page-dark .pricing-guarantee {
+    text-align: left;
+}
+
+body.page-dark .contact-intro p,
+body.page-dark .local-process .section-intro {
+    max-width: 62ch;
+    margin-left: 0;
+}
+
+/* Buttons keep their own centring - only the blocks around them move. */
+body.page-dark .btn {
+    text-align: center;
+}
+
+/* Blog header (blog.css) follows the same left edge. */
+body.page-dark .blog-header,
+body.page-dark .blog-header-content,
+body.page-dark .blog-hero,
+body.page-dark .blog-hero-content {
+    text-align: left;
+}
+
+body.page-dark .blog-header p,
+body.page-dark .blog-hero p {
+    max-width: 62ch;
+    margin-left: 0;
+    margin-right: 0;
 }
