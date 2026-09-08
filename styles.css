@@ -4283,11 +4283,6 @@ body[data-page="seo-plumber"] .hero {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.reference-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--s-md);
-}
-
 .reference-item h3 {
     color: var(--text-dark);
     margin-bottom: var(--s-md);
@@ -4452,12 +4447,6 @@ body[data-page="seo-plumber"] .hero {
     text-align: center;
 }
 
-.category-emoji {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: var(--s-xs);
-}
-
 .category-item strong,
 .post-type strong {
     display: block;
@@ -4554,11 +4543,6 @@ body[data-page="seo-plumber"] .hero {
     transform: translateY(-5px);
 }
 
-.tip-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--s-md);
-}
-
 .tip-card h3 {
     color: var(--text-dark);
     margin-bottom: var(--s-md);
@@ -4593,11 +4577,6 @@ body[data-page="seo-plumber"] .hero {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-left: 4px solid #e74c3c;
-}
-
-.mistake-icon {
-    font-size: 2rem;
-    margin-bottom: var(--s-md);
 }
 
 .mistake-item h3 {
