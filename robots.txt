@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# The paid-traffic landing pages carry <meta name="robots" content="noindex">.
+# They are deliberately NOT disallowed here: a disallowed page is never
+# crawled, so the noindex would never be read and the URL could still be
+# indexed from external links.
+
+Sitemap: https://weltodigital.com/sitemap.xml
