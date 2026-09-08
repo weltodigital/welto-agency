@@ -39,6 +39,14 @@
     --chamfer: 14px;
     --ease: cubic-bezier(0.25, 1, 0.5, 1);
 
+    /* Motion curves. --ease-out-expo is the long, decisive settle used for
+       entrances; --ease-snap is the short one for hovers and presses. */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-snap: cubic-bezier(0.25, 0, 0, 1);
+    --dur-fast: 0.14s;
+    --dur-mid: 0.28s;
+    --dur-slow: 0.55s;
+
     /* Section rhythm (8px base grid) */
     --section-pad-desktop: 128px;
     --section-pad-tablet: 80px;
@@ -6042,4 +6050,204 @@ body.page-dark .article-hero-image {
    list numbering would show twice. */
 body.page-dark .table-of-contents ol {
     list-style: none;
+}
+
+/* ===================================================================
+   WELTO 2026 - motion
+   Entrances are opacity + a short translate, staggered within a group.
+   The hidden start state only applies when JS is running (html.has-reveal),
+   so with JS off or blocked the content is simply visible.
+   =================================================================== */
+.has-reveal .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    will-change: opacity, transform;
+}
+
+.has-reveal .reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    transition:
+        opacity var(--dur-slow) var(--ease-out-expo) var(--reveal-delay, 0s),
+        transform var(--dur-slow) var(--ease-out-expo) var(--reveal-delay, 0s);
+}
+
+/* Hovers: short, snappy, and never on touch devices where they stick. */
+@media (hover: hover) {
+    body.page-dark .service-card:hover,
+    body.page-dark .industry-card:hover,
+    body.page-dark .article-card:hover,
+    body.page-dark .tip-card:hover,
+    body.page-dark .process-step:hover,
+    .panel:hover,
+    .trade-item:hover {
+        transform: translateY(-3px);
+        transition: transform var(--dur-mid) var(--ease-out-expo),
+                    background-color var(--dur-mid) var(--ease-snap),
+                    border-color var(--dur-mid) var(--ease-snap);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .nav-link {
+        transition: color var(--dur-fast) var(--ease-snap);
+    }
+}
+
+.btn {
+    transition: background-color var(--dur-fast) var(--ease-snap),
+                border-color var(--dur-fast) var(--ease-snap),
+                color var(--dur-fast) var(--ease-snap),
+                transform var(--dur-fast) var(--ease-snap);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.985);
+    transition-duration: 0.06s;
+}
+
+/* The wordmark dot is the brand's one piece of idle motion. */
+@media (hover: hover) {
+    .wordmark:hover .wordmark-dot {
+        transform: translateY(-1px) scale(1.35);
+        transition: transform var(--dur-mid) var(--ease-out-expo);
+    }
+}
+
+.wordmark-dot {
+    transition: transform var(--dur-mid) var(--ease-out-expo);
+}
+
+/* Anyone who asks for less motion gets none of it. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .has-reveal .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===================================================================
+   WELTO 2026 - Signal gradients
+   A wash of the accent behind key sections, kept low enough that body
+   text keeps its contrast. Layered as ::before so section backgrounds
+   and borders are untouched.
+   =================================================================== */
+.hero-home,
+body.page-dark .hero,
+.final-cta,
+.case-study,
+body.page-dark .tool-cta,
+body.page-dark .about-cta,
+body.page-dark .services-cta,
+body.page-dark .guide-cta {
+    position: relative;
+    isolation: isolate;
+}
+
+.hero-home::before,
+body.page-dark .hero::before,
+.final-cta::before,
+.case-study::before,
+body.page-dark .tool-cta::before,
+body.page-dark .about-cta::before,
+body.page-dark .services-cta::before,
+body.page-dark .guide-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 80% at 88% 12%, rgba(232, 255, 77, 0.13), transparent 68%),
+        radial-gradient(45% 60% at 4% 96%, rgba(232, 255, 77, 0.07), transparent 70%);
+}
+
+/* The final CTA carries the strongest wash, since it is the last thing
+   on the page and has no imagery competing with it. */
+.final-cta::before {
+    background:
+        radial-gradient(70% 120% at 50% 120%, rgba(232, 255, 77, 0.20), transparent 66%),
+        radial-gradient(40% 70% at 90% 0%, rgba(232, 255, 77, 0.08), transparent 70%);
+}
+
+/* Hairline grid, motion.dev style: structure without weight. */
+.hero-home::after,
+.final-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(245, 244, 240, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 244, 240, 0.028) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(80% 70% at 50% 30%, #000, transparent 75%);
+    -webkit-mask-image: radial-gradient(80% 70% at 50% 30%, #000, transparent 75%);
+}
+
+/* Trade page heroes sit over a photo, so the wash is dialled back. */
+body.page-dark .hero::before {
+    background: radial-gradient(55% 75% at 85% 10%, rgba(232, 255, 77, 0.09), transparent 70%);
+}
+
+/* Centred CTA blocks: text-align alone was not enough, because the
+   paragraph centres itself with auto margins and the button row centres
+   with flex. Both have to move for the block to sit on the left edge. */
+body.page-dark .services-cta p,
+body.page-dark .about-cta p,
+body.page-dark .tool-cta p,
+body.page-dark .guide-cta p,
+body.page-dark .cta-content p,
+body.page-dark .cta-section p {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 62ch;
+}
+
+body.page-dark .cta-buttons,
+body.page-dark .cta-content .cta-buttons,
+body.page-dark .hero-cta {
+    justify-content: flex-start;
+}
+
+/* Footer: the company and legal links sit with the brand, leaving the
+   four columns for the pages people actually navigate to. */
+.footer-brand-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin: 20px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--hairline-dim);
+}
+
+.footer-brand-links li {
+    margin: 0;
+}
+
+.footer-brand-links a {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-snap);
+}
+
+.footer-brand-links a:hover {
+    color: var(--signal);
 }

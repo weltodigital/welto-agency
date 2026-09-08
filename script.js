@@ -188,28 +188,44 @@ function showSuccessMessage() {
 
 // Intersection Observer for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Scroll reveal, motion.dev style: opacity plus a short rise, staggered
+    // within each group. The hidden start state lives in CSS behind
+    // html.has-reveal, which is only added here - so if this script never
+    // runs, nothing is left invisible.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
+    document.documentElement.classList.add('has-reveal');
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .industry-card, .case-study, .feature');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
+    const revealSelector = [
+        '.service-card', '.industry-card', '.trade-item', '.why-block',
+        '.case-figure-img', '.process-step', '.article-card', '.faq-item',
+        '.contact-option', '.mission-item', '.value-item', '.stat-card',
+        '.answer-block', '.comparison-table', '.tip-card', '.reference-item',
+        '.lp-card', '.lp-stat', '.case-stat'
+    ].join(', ');
+
+    const groups = new Map();
+    const targets = Array.prototype.slice.call(document.querySelectorAll(revealSelector));
+
+    targets.forEach(function (el) {
+        el.classList.add('reveal');
+        const parent = el.parentElement;
+        const index = groups.get(parent) || 0;
+        groups.set(parent, index + 1);
+        // cap the stagger so a long grid never leaves the last card waiting
+        el.style.setProperty('--reveal-delay', Math.min(index, 5) * 0.06 + 's');
     });
+
+    const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    targets.forEach(function (el) { revealObserver.observe(el); });
 });
 
 // Phone number formatting
