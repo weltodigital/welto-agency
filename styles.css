@@ -121,7 +121,7 @@ body {
 /* Typography System - WELTO Rebrand 2026 type scale (Inter 400/500 only) */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: var(--s-lg);
     color: var(--text-dark);
@@ -129,21 +129,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.75rem, 7vw, 5rem);
-    line-height: 0.94;
+    font-size: clamp(3.25rem, 8vw, 6rem);
+    line-height: 1.06;      /* room between lines, and under the highlight band */
     letter-spacing: -0.04em;
+    font-weight: 700;
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 0.98;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.08;
     letter-spacing: -0.035em;
+    font-weight: 700;
 }
 
 h3 {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    line-height: 1.2;
+    font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+    line-height: 1.25;
     letter-spacing: -0.02em;
+    font-weight: 700;
 }
 
 h4 {
@@ -4836,10 +4839,10 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .section-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 0.98;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.08;
     letter-spacing: -0.035em;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 16px;
@@ -4876,9 +4879,9 @@ body[data-page="seo-plumber"] .hero {
 }
 
 .hero-home h1 {
-    font-size: clamp(2.75rem, 7vw, 5rem);
-    line-height: 0.94;
-    font-weight: 500;
+    font-size: clamp(3.25rem, 8vw, 6rem);
+    line-height: 1.06;
+    font-weight: 700;
     letter-spacing: -0.04em;
     color: var(--bone);
     margin-bottom: 28px;
@@ -4887,7 +4890,7 @@ body[data-page="seo-plumber"] .hero {
 .hero-highlight {
     background: var(--signal);
     color: var(--ink);
-    padding: 0 10px;
+    padding: 0.04em 12px;
     border-radius: 0;
     /* No chamfer here: on an inline, wrapping element the cut lands
        mid-word and reads as a rendering fault rather than a detail. */
