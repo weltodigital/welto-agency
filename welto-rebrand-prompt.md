@@ -80,7 +80,7 @@ Replace the entire current hero. The new hero is on `--ink` background.
 
 **Subhead:** "We help electricians, plumbers and roofers rank in the map pack and turn local searches into work. Month-to-month, no jargon."
 
-**CTAs:** One primary button "Get your free audit →". Next to it, a small line of text: "or [see Mitchell Electrical's results]" where the bracketed text is a tertiary link to the case study section.
+**CTAs:** One primary button "Get your free audit →". Next to it, a small line of text: "or [see what local SEO growth looks like]" where the bracketed text is a tertiary link to the results section.
 
 **Proof bar below CTAs** (separated by a hairline top border, 28px padding-top): three inline items in `--mute` colour:
 - "**120+** trades businesses" (the number in `--bone` weight 500)
@@ -115,27 +115,18 @@ Each card: H3 title, short paragraph (~2 sentences), then 3–4 short bullet poi
 
 ---
 
-## Phase 4 — Case study (replaces "Real Results" + guarantee section)
+## Phase 4 — Results example (replaces "Real Results" + guarantee section)
 
 **Delete the entire "Guaranteed Rankings, or We'll Work for Free" section.** This is the single biggest trust-damaging element on the current site.
 
-Build a named case study block on `--ink` background:
+Build an illustrative results block on `--ink` background — **no named client, no invented stats, no testimonial quote.** WELTO has no signed client permission, so nothing here may be attributed to a real business.
 
-Eyebrow: "Case · Mitchell Electrical"
-Heading: "From 4 leads a week to 18 in three months."
+Eyebrow: "What local SEO can do"
+Heading: "Search visibility compounds month after month."
 
-Three large stat tiles in a row (use the pattern from the brand pack — 36px numbers in `--bone` weight 500, letter-spacing -0.03em; 12px labels in `--mute`):
-- "+312%" / "Organic clicks, 6 months"
-- "4 → 18" / "Leads per week"
-- "#1" / '"Electrician Portsmouth"'
+Below the heading, place the existing `weltoresults.webp` screenshot with a small caption in `--mute`: "Example Search Console data — organic clicks and impressions over six months of local SEO."
 
-Below the stats (separated by a hairline `--ink-border`, 24px padding):
-- A pullquote in italic, 18px, `--bone-muted`: *"Within three months we'd doubled the bookings and stopped paying for Google Ads entirely."*
-- Attribution: "Dave Mitchell · Mitchell Electrical, Portsmouth" — in `--mute`, 13px
-
-Below that, place the existing `weltoresults.webp` screenshot with a small caption in `--mute`: "Search Console data, Mitchell Electrical · Mar–Sep 2025"
-
-**IMPORTANT:** Mark Dave Mitchell / Mitchell Electrical as a placeholder. Add an HTML comment `<!-- PLACEHOLDER: Replace with real client name, real quote, and signed permission before publishing. -->` Ed needs to provide the real client details or remove this section before launch.
+That's the whole section: eyebrow, heading, chart, caption. Only add stat tiles, a pullquote or an attribution once Ed supplies real client figures with written permission.
 
 **Stop here and summarise.**
 
