@@ -6055,7 +6055,15 @@ body.page-dark .article-hero-image {
 
 /* The table of contents renders its own numbered markers, so the native
    list numbering would show twice. */
-body.page-dark .table-of-contents ol {
+/* blog.css draws its own numbered marker on .blog-content ol li via a
+   CSS counter, so the native list marker has to go or every ordered list
+   renders its number twice. This covers the contents list and every
+   ordered list in the article body. */
+body.page-dark .blog-content ol,
+body.page-dark .blog-content ul,
+body.page-dark .table-of-contents ol,
+body.page-dark .faq-item ul,
+body.page-dark .landscape-block ul {
     list-style: none;
 }
 
