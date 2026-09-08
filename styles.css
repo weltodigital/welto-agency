@@ -5955,3 +5955,91 @@ body.page-dark .cta-section {
     border-radius: 0;
     clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
 }
+
+/* ===================================================================
+   WELTO 2026 - article answer block
+   The lead answer sits above the fold and is written to be extracted
+   whole by AI Overviews and assistants, so it gets its own frame.
+   =================================================================== */
+body.page-dark .answer-block {
+    background: var(--bone-04);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--signal);
+    padding: 28px 32px;
+    margin: 0 0 40px;
+    clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
+}
+
+body.page-dark .answer-block .answer-lead {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--bone-muted);
+}
+
+body.page-dark .answer-block strong {
+    color: var(--bone);
+}
+
+/* Comparison tables need to scroll rather than push the page wide. */
+body.page-dark .comparison-table {
+    overflow-x: auto;
+    margin: 32px 0;
+    border: 1px solid var(--hairline-dim);
+}
+
+body.page-dark .comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+}
+
+body.page-dark .comparison-table th,
+body.page-dark .comparison-table td {
+    text-align: left;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--hairline-dim);
+    color: var(--bone-muted);
+}
+
+body.page-dark .comparison-table th {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--signal);
+    background: var(--bone-04);
+}
+
+body.page-dark .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Article header follows the site's left edge, and the hero image sits
+   on it rather than floating centre. */
+body.page-dark .blog-header,
+body.page-dark .blog-header h1,
+body.page-dark .blog-header .breadcrumbs,
+body.page-dark .blog-header .article-meta {
+    text-align: left;
+}
+
+body.page-dark .blog-header .article-meta {
+    justify-content: flex-start !important;
+}
+
+body.page-dark .article-hero-image {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    margin: 32px 0;
+    border: 1px solid var(--hairline-dim);
+    border-radius: 0;
+}
+
+/* The table of contents renders its own numbered markers, so the native
+   list numbering would show twice. */
+body.page-dark .table-of-contents ol {
+    list-style: none;
+}
