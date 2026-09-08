@@ -5875,6 +5875,13 @@ body.page-dark .pricing-guarantee {
     text-align: left;
 }
 
+body.page-dark .contact-intro h2,
+body.page-dark .contact-intro h3,
+body.page-dark .scheduling-content h2,
+body.page-dark .benefits-content h2 {
+    text-align: left;
+}
+
 body.page-dark .contact-intro p,
 body.page-dark .local-process .section-intro {
     max-width: 62ch;
@@ -6250,4 +6257,99 @@ body.page-dark .hero-cta {
 
 .footer-brand-links a:hover {
     color: var(--signal);
+}
+
+/* ===================================================================
+   WELTO 2026 - one h1 size everywhere
+   The trade, location, tool, blog and sub-page templates each carried
+   their own h1 scale (2rem to 3.2rem, some fixed px). They now all use
+   the homepage clamp, including inside the mobile breakpoints where the
+   legacy sheets shrink them again.
+   =================================================================== */
+h1,
+.hero-title,
+.page-header-content h1,
+.page-header h1,
+.blog-header h1,
+.tool-header h1,
+.sitemap-content h1,
+body.page-dark h1 {
+    font-size: clamp(3.25rem, 8vw, 6rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    h1,
+    .hero-title,
+    .page-header-content h1,
+    .page-header h1,
+    .blog-header h1,
+    .tool-header h1,
+    .sitemap-content h1,
+    body.page-dark h1 {
+        font-size: clamp(2.5rem, 11vw, 3.25rem);
+        line-height: 1.06;
+    }
+}
+
+/* Local / trade landscape section - the block that makes each of these
+   pages worth having on its own. */
+body.page-dark .local-landscape {
+    background: var(--ink);
+    padding: var(--section-pad-desktop) 0;
+    border-top: 1px solid var(--hairline-dim);
+}
+
+body.page-dark .local-landscape .section-intro {
+    max-width: 62ch;
+    margin: 0 0 48px;
+    color: var(--bone-muted);
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.landscape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+body.page-dark .landscape-block {
+    background: var(--bone-04);
+    border: 1px solid var(--hairline-dim);
+    padding: 28px;
+    clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
+}
+
+body.page-dark .landscape-block h3 {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+    color: var(--bone);
+}
+
+body.page-dark .landscape-block p {
+    color: var(--bone-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    body.page-dark .local-landscape { padding: var(--section-pad-tablet) 0; }
+}
+
+@media (max-width: 767px) {
+    body.page-dark .local-landscape { padding: var(--section-pad-mobile) 0; }
+}
+
+/* The process list centred itself with auto margins while its heading sat
+   on the left edge. */
+body.page-dark .process-steps,
+body.page-dark .faq-grid,
+body.page-dark .services-grid {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
 }
