@@ -1,8 +1,0 @@
--- SUPERSEDED — do not run.
---
--- This script disabled row level security on public.leads, which left every
--- lead (name, email, phone, IP) readable by anyone holding the anon key.
--- The anon key ships in client-side JS and in this public repo, so that is
--- effectively the whole internet.
---
--- The correct lockdown lives in ../supabase-security-fix.sql. Run that instead.
