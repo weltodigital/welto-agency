@@ -84,10 +84,9 @@ export default async function handler(req, res) {
 
         // Insert data into Supabase
         console.log('Attempting to insert lead data:', leadData);
-        const { data: result, error } = await supabase
+        const { error } = await supabase
             .from('leads')
-            .insert([leadData])
-            .select();
+            .insert([leadData]);
 
         if (error) {
             console.error('Supabase error details:', {
@@ -104,12 +103,11 @@ export default async function handler(req, res) {
             });
         }
 
-        console.log('Successfully inserted lead:', result);
+        console.log('Lead inserted successfully');
 
         return res.status(200).json({
             success: true,
-            message: 'Lead submitted successfully',
-            lead_id: result[0]?.id
+            message: 'Lead submitted successfully'
         });
 
     } catch (error) {

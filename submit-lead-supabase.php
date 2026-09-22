@@ -87,9 +87,10 @@ try {
         CURLOPT_POSTFIELDS => json_encode($data),
         CURLOPT_HTTPHEADER => [
             'Content-Type: application/json',
+            // apikey only: sb_publishable_/sb_secret_ keys are not JWTs and are
+            // rejected on Authorization: Bearer. Works for legacy anon keys too.
             'apikey: ' . $supabase_key,
-            'Authorization: Bearer ' . $supabase_key,
-            'Prefer: return=representation'
+            'Prefer: return=minimal'
         ],
     ]);
 
@@ -103,8 +104,6 @@ try {
     }
 
     if ($http_code === 201) {
-        $result = json_decode($response, true);
-
         // Send email notification (optional)
         $email_subject = "New Lead from {$data['trade_type']} in {$data['location']}";
         $email_body = "
@@ -128,8 +127,7 @@ try {
 
         echo json_encode([
             'success' => true,
-            'message' => 'Lead submitted successfully',
-            'lead_id' => $result[0]['id'] ?? null
+            'message' => 'Lead submitted successfully'
         ]);
     } else {
         $error_response = json_decode($response, true);

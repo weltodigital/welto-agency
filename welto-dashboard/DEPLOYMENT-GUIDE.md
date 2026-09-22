@@ -49,7 +49,7 @@ VALUES ('client1', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
 NODE_ENV=production
 JWT_SECRET=your_production_jwt_secret_here_make_it_random_and_secure
 SUPABASE_URL=https://ddtyovjdxdfpqjemmtyp.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkdHlvdmpkeGRmcHFqZW1tdHlwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MzU4MjMyNiwiZXhwIjoyMDc5MTU4MzI2fQ.rPOrzq7fHFqIHY4PIGcEQ3GKt1SKlzHRUrP21G5aSbw
+SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>
 PORT=5001
 CORS_ORIGIN=https://app.weltodigital.com
 ```

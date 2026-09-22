@@ -3,7 +3,7 @@ import { supabase } from './supabase-client.js';
 /**
  * Submit lead form data to Supabase
  * @param {FormData|Object} formData - Form data to submit
- * @returns {Promise<{success: boolean, message: string, lead_id?: string}>}
+ * @returns {Promise<{success: boolean, message: string}>}
  */
 export async function submitLead(formData) {
     try {
@@ -52,10 +52,9 @@ export async function submitLead(formData) {
         };
 
         // Insert into Supabase
-        const { data: result, error } = await supabase
+        const { error } = await supabase
             .from('leads')
-            .insert([leadData])
-            .select();
+            .insert([leadData]);
 
         if (error) {
             console.error('Supabase error:', error);
@@ -68,8 +67,7 @@ export async function submitLead(formData) {
 
         return {
             success: true,
-            message: 'Lead submitted successfully',
-            lead_id: result[0]?.id
+            message: 'Lead submitted successfully'
         };
 
     } catch (error) {
@@ -84,7 +82,7 @@ export async function submitLead(formData) {
 /**
  * Submit lead form using traditional form submission
  * @param {HTMLFormElement} form - The form element
- * @returns {Promise<{success: boolean, message: string, lead_id?: string}>}
+ * @returns {Promise<{success: boolean, message: string}>}
  */
 export async function submitLeadForm(form) {
     const formData = new FormData(form);

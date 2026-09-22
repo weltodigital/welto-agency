@@ -2,8 +2,13 @@
 import { createClient } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 
+// The URL is not a secret; the key is and must come from the environment.
 const supabaseUrl = process.env.SUPABASE_URL || 'https://ddtyovjdxdfpqjemmtyp.supabase.co';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseServiceKey) {
+  throw new Error('SUPABASE_SERVICE_ROLE_KEY must be set');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
