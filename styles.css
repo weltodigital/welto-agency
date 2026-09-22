@@ -6361,3 +6361,57 @@ body.page-dark .services-grid {
     margin-right: 0;
     max-width: none;
 }
+
+/* ===================================================================
+   Calendly click-to-load placeholder
+   Stands in for the booking embed until the visitor asks for it, so
+   no third-party cookies are set on page view. See calendly-consent.js.
+   =================================================================== */
+.calendly-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 320px;
+    min-height: 420px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    background: var(--bone-04);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+}
+
+.calendly-placeholder__title {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--bone);
+}
+
+.calendly-placeholder__note {
+    max-width: 38ch;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--mute);
+}
+
+.calendly-placeholder__button {
+    padding: 0.85rem 1.75rem;
+    font: inherit;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--signal);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.calendly-placeholder__button:hover {
+    filter: brightness(1.08);
+}
+
+.calendly-placeholder__button:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+}

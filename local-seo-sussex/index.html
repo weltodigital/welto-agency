@@ -134,6 +134,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://weltodigital.com/local-seo-sussex/">
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="page-dark">
     <!-- Header -->
@@ -416,8 +417,11 @@
                     <div class="calendly-section">
                         <h3>Schedule your free Sussex consultation</h3>
                         <!-- Calendly inline widget begin -->
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/ed-weltodigital/30min" style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <div class="calendly-placeholder" data-url="https://calendly.com/ed-weltodigital/30min">
+                            <p class="calendly-placeholder__title">Book a free 30-minute call</p>
+                            <p class="calendly-placeholder__note">The calendar is loaded from Calendly, which sets its own cookies. Nothing loads until you choose to open it.</p>
+                            <button class="calendly-placeholder__button" type="button">Open the booking calendar</button>
+                        </div>
                         <!-- Calendly inline widget end -->
                     </div>
                 </div>
@@ -509,5 +513,6 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="/calendly-consent.js" defer></script>
 </body>
 </html>

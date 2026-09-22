@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNVPCG57KD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QNVPCG57KD');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WELTO · Free local SEO strategy call for UK trades</title>
@@ -88,6 +80,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://weltodigital.com/facebook-ads-landing.html">
     <meta name="robots" content="noindex, follow">
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="page-dark">
     <!-- PLACEHOLDER: Replace the testimonials and result figures below
@@ -169,8 +162,11 @@
                 </div>
                 <div class="lp-calendar">
                     <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/ed-weltodigital/30min" style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <div class="calendly-placeholder" data-url="https://calendly.com/ed-weltodigital/30min">
+                        <p class="calendly-placeholder__title">Book a free 30-minute call</p>
+                        <p class="calendly-placeholder__note">The calendar is loaded from Calendly, which sets its own cookies. Nothing loads until you choose to open it.</p>
+                        <button class="calendly-placeholder__button" type="button">Open the booking calendar</button>
+                    </div>
                     <!-- Calendly inline widget end -->
                 </div>
             </div>
@@ -263,12 +259,6 @@
     <script>
         // Conversion tracking - fires Facebook Pixel / GA events if present
         function trackConversion(action) {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', { content_name: action, value: 0, currency: 'GBP' });
-            }
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', { event_category: 'Lead', event_label: action });
-            }
         }
 
         // Smooth scrolling for anchor links
@@ -294,5 +284,6 @@
             });
         });
     </script>
+    <script src="/calendly-consent.js" defer></script>
 </body>
 </html>
