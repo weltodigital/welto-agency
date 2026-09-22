@@ -2343,7 +2343,7 @@ html {
 
 /* Local Process Section */
 .local-process {
-    background: linear-gradient(rgba(10, 10, 10, 0.86), rgba(10, 10, 10, 0.86)), url('../Welto More Leads .png') center/cover no-repeat;
+    background: var(--ink);
     color: var(--white);
     padding: var(--section-padding);
     position: relative;
@@ -2457,11 +2457,6 @@ html {
         grid-template-columns: 1fr;
     }
 
-}
-
-/* Plumber SEO Page Background - Hero Section Only */
-body[data-page="seo-plumber"] .hero {
-    background: linear-gradient(rgba(10, 10, 10, 0.86), rgba(10, 10, 10, 0.86)), url('../plumber-seo.png') center/cover no-repeat !important;
 }
 
 /* Local Keyword Tool Styles */
